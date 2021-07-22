@@ -4,7 +4,7 @@ theme = "hugo-theme-codex"
 # Override these settings with your own
 title = "Laith Bahodi"
 languageCode = "en-us"
-baseURL = "https://example.org/"
+baseURL = "/"
 copyright = "© {2021}"
 
 # Add your Disqus shortname here.
