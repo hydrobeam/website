@@ -1,0 +1,2 @@
+[context.production.environment]
+  HUGO_VERSION = "v0.86.0-41C6C52E+extended"
