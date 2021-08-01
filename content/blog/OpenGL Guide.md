@@ -128,4 +128,4 @@ class VGroup(VMobject, metaclass=ConvertToOpenGL)
 
 **Image** :
 
-![image-20210731213730044](static/img/image-20210731213730044.png)
+![image-20210731213730044](/static/img/image-20210731213730044.png)
