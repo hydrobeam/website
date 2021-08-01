@@ -128,4 +128,4 @@ class VGroup(VMobject, metaclass=ConvertToOpenGL)
 
 **Image** :
 
-![image-20210731213730044](/static/img/image-20210731213730044.png)
+<img src="/img/opengl_showcase.png" alt="opengl_showcase" style="zoom:200%;" />
