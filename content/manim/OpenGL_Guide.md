@@ -17,6 +17,8 @@ toc: false
 ## Why use the OpenGL renderer?
 
 - ***Immense*** speed improvement for rendering scenes.
+  - Shifted from rendering with `Cairo` to shaders with OpenGL
+  - Shaders are GPU-accelerated as opposed to Cairo, which runs purely on the CPU
 - Live interactive window which allows for:
   - Manoeuvring with the camera
   - Manipulating the scene after rendering via `self.interactive_embed()`
