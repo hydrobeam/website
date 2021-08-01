@@ -75,3 +75,10 @@ opublishDir = "public"
   name = "art"
   title = "Art"
   url = "/art"
+
+  [[menu.main]]
+  identifier = "manim"
+  name = "manim"
+  title = "Manim"
+  url = "/manim"
+
