@@ -1,5 +1,5 @@
 ---
-title: "Manim OpenGL Renderer situation as of August 2021"
+title: "Manim OpenGL Renderer Usage Guide - August 2021"
 date: 2021-07-32
 slug: "p3"
 description: "How to use the Manim OpenGL Renderer."
