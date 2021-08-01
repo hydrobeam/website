@@ -7,7 +7,7 @@ keywords: []
 draft: false
 tags: ["stuff"]
 math: true
-toc: true
+toc: false
 ---
 
 ## First thoughts 😅
