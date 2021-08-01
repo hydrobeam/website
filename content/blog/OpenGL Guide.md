@@ -39,11 +39,11 @@ toc: false
 - `--write_to_movie` produces an mp4 file.
   - Moving the camera via the interactive window **will** impact the mp4 produced.
 - `--use_projection_stroke_shaders` + `--use_projection_fill_shaders`
-  - Flags to use the rewritten 3b1b shaders by EulerTour [#1716]([Rewrite stroke and fill shaders by eulertour · Pull Request #1716 · ManimCommunity/manim (github.com)](https://github.com/ManimCommunity/manim/pull/1716)). 
+  - Flags to use the rewritten 3b1b shaders by EulerTour [#1716](https://github.com/ManimCommunity/manim/pull/1716). 
   - Make `VMobjects` compatible with projection matrices.
   - Shader code is much easier to understand than 3b1b’s shaders.
   - Alternative to Grant’s shaders, which have been shown to have mysterious bugs and interactions
-    -  Obscure glitching / artefacting [#1762]([Weird artifacts / glitches for `renderer=opengl` · Issue #1762 · ManimCommunity/manim (github.com)](https://github.com/ManimCommunity/manim/issues/1762))
+    -  Obscure glitching / artefacting [#1762](https://github.com/ManimCommunity/manim/issues/1762)
     - Stroke shaders not able to be rendered by dedicated Intel GPU’s
   - Currently are not anti-aliased, so mobjects may appear pixelated if examined closely
   - **Unknowns**: performance difference.
@@ -92,7 +92,7 @@ class VGroup(VMobject, metaclass=ConvertToOpenGL)
 - This tells Manim to use the different base Mobjects depending on the renderer used.
   - `VMobject` --> `OpenGLVMobject`
   - `Mobject` --> `OpenGLVMobject`
-  - from [#1843]([Drop redundant OpenGL files and add metaclass support for `Surface` by hydrobeam · Pull Request #1843 · ManimCommunity/manim (github.com)](https://github.com/ManimCommunity/manim/pull/1843)), `Surface` (`ParametricSurface`) --> `OpenGLSurface`
+  - from [#1843](https://github.com/ManimCommunity/manim/pull/1843), `Surface` (`ParametricSurface`) --> `OpenGLSurface`
 - ***IMPORTANT***: calling `VMobject` or `Mobject` directly will ***BREAK*** `OpenGL` scenes, use `OpenGLMobject` or `OpenGLVMobject` instead.
 
 
@@ -101,7 +101,7 @@ class VGroup(VMobject, metaclass=ConvertToOpenGL)
 
 - `StreamLines`+ all of `vector_field.py`
 - `PMobject`
-- `ImageMobject`, in progress at [#1837][Add :class:`~.OpenGLImageMobject` by hydrobeam · Pull Request #1837 · ManimCommunity/manim (github.com)]
+- `ImageMobject`, in progress at [#1837](https://github.com/ManimCommunity/manim/pull/1837)
 - `BraceLabel` (fixed by #1843)
 - probably other stuff, if you find something, let us know
 
