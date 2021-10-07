@@ -1,5 +1,5 @@
 ---
-title: "Implementing Log Scaling"
+title: "Implementing Logarithmic Scaling in Manim"
 date: 2021-10-06
 slug: "log"
 description: "Some thoughts I had while working on this feature."
@@ -10,15 +10,13 @@ math: false
 toc: false
 ---
 
-# Implementing Logarithmic Scaling in Manim
-
-I should mention that this blog is severely outdated, as I’ve submitted the PR for this topic quite a while ago. 
+ 
 
 To help breathe some life into this website, I decided it might be nice to discuss my experience with implementing  [this PR](https://github.com/ManimCommunity/manim/pull/1812) which introduces log scaling for `Axes` in Manim. 
 
-Here’s the resutl:
+Here’s the result:
 
-![image-20211006213642944](/img/image-20211006213642944.png)
+<img src="/img/image-20211006222818131.png" alt="image-20211006222818131" style="zoom:200%;" />
 
 ```python
 class LSEE(Scene):
