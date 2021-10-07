@@ -12,7 +12,9 @@ toc: false
 
 
 
-# OpenGL Guide
+# OpenGL Guide - OUTDATED
+
+> Warning: This guide is outdated: Please refer to the [Manim documentation](https://docs.manim.community/) for the most up to date information.
 
 ## Why use the OpenGL renderer?
 
