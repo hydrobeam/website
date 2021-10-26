@@ -1,5 +1,5 @@
 # Welcome to *website*
-My personal webstie to store cool stuff 🤖: www.aqaubeam.com
+My personal website to store cool stuff 🤖: www.aquabeam.com
 
 
 
