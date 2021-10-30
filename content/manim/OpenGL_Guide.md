@@ -1,6 +1,6 @@
 ---
-title: "Manim OpenGL Renderer Usage Guide - August 2021"
-date: 2021-07-31
+title: "Manim OpenGL Renderer Usage Guide - November 2021"
+date: 2021-10-29
 slug: "opengl_guide"
 description: "How to use the Manim OpenGL Renderer."
 keywords: ["manim"]
