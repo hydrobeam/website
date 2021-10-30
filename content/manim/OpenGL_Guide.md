@@ -12,9 +12,7 @@ toc: false
 
 
 
-# OpenGL Guide - OUTDATED
-
-> Warning: This guide is outdated: Please refer to the [Manim documentation](https://docs.manim.community/) for the most up to date information.
+# OpenGL Guide - Updated November 2021
 
 ## Why use the OpenGL renderer?
 
@@ -30,10 +28,6 @@ toc: false
 - OpenGL is the future of Manim.
 
 > **Important**: the window only lasts for the duration of the animation, and will close immediately afterwards without `self.interactive_embed()`. Therefore, a scene without animations (just `self.add()`) will instantly close.
-
-
-
-> **Unknown:** I don’t know if pngs can be produced with the OpenGL renderer.
 
 ## Main Flags
 
@@ -84,7 +78,7 @@ class OpenGLShow(Scene):
 
 ## “Will my code work with OpenGL?” 
 
-- **Answer**: probably.
+- **Answer**: most likely.
 - OpenGL `Mobjects` and regular `Mobjects` have a very different backend and are **NOT** compatible with each other.
 - **Our solution**: compatibility via metaclasses:
   - Throughout the codebase, you might notice something like: `
@@ -96,20 +90,25 @@ class VGroup(VMobject, metaclass=ConvertToOpenGL)
 - This tells Manim to use the different base Mobjects depending on the renderer used.
   - `VMobject` --> `OpenGLVMobject`
   - `Mobject` --> `OpenGLVMobject`
-  - from [#1843](https://github.com/ManimCommunity/manim/pull/1843), `Surface` (`ParametricSurface`) --> `OpenGLSurface`
-- ***IMPORTANT***: calling `VMobject` or `Mobject` directly will ***BREAK*** `OpenGL` scenes, use `OpenGLMobject` or `OpenGLVMobject` instead.
-
-
+  - Surface --> `OpenGLSurface`
+- ***IMPORTANT***: calling `VMobject`/`Mobject` /`Surface` directly will ***BREAK*** `OpenGL` scenes, use `OpenGLMobject` /`OpenGLVMobject`/`OpenGLSurface` instead.
 
 ### Currently known code that is not yet duo-compatible:
 
-- `StreamLines`+ all of `vector_field.py`
-- `PMobject`
 - `ImageMobject`, in progress at [#1837](https://github.com/ManimCommunity/manim/pull/1837)
-- `BraceLabel` (fixed by #1843)
-- probably other stuff, if you find something, let us know
+- There may be other code that is not compatible, if you find some, please let us know!
 
+### Troubleshooting
 
+> Nothing is rendering!
+
+- There are some known issues depending on the type of hardware on your machine. This might be a case of strokes not being able to be rendered using the shaders Grant has written. We aren’t completely sure why this happens; however, the projection shaders should help resolve the issue. 
+
+> My scenes aren’t running any faster
+
+- Unfortunately, there are some performance issues that particularly affect the OpenGL renderer. This means that you might notice that OpenGL code runs even slower than Cairo. We’re working on solving this issue, but when we eventually transition to the projection shaders, most of these performance issues should be resolved as we can more efficiently render scenes.
+
+  
 
 ## GUI + Flags
 
