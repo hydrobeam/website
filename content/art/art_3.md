@@ -10,7 +10,7 @@ math: false
 toc: false
 ---
 
-Here’s an animation I made when I was learning about Perlin Noise! I used the [`perlin-noise`]([perlin-noise · PyPI](https://pypi.org/project/perlin-noise/))/`random` libraries to generate the data.
+Here’s an animation I made when I was learning about Perlin Noise! I used the [`perlin-noise`](https://pypi.org/project/perlin-noise/)/`random` libraries to generate the data.
 
 
 
@@ -77,7 +77,7 @@ class PerlinNoiseVsRandom(Scene):
             noise_array.append(position_perl)
             rand_array.append(position_rand)
 		
-        # the perlicurves
+        # the perlin noise / random curves
         poly_perlin = VMobject(stroke_width=2, color=BLUE_C).set_points_as_corners(
             noise_array
         )
