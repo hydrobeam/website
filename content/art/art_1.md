@@ -1,7 +1,7 @@
 ---
 title: "ManimCE stars over time"
 date: 2021-07-23
-slug: "a1"
+slug: "stars"
 description: "Check how many stars ManimCE has overtime!"
 keywords: []
 draft: false

@@ -1,7 +1,7 @@
 ---
 title: "Refraction through a lens with Manim"
 date: 2021-11-04
-slug: "a2"
+slug: "optics"
 description: "Optics with Manim!"
 keywords: []
 draft: false
