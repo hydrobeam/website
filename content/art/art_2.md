@@ -14,7 +14,7 @@ toc: false
 
 
 
-Here’s a neat animation about optics I made a while ago! 👁️👁️👓
+Here’s an optics animation I made a while ago! 👁️👁️👓
 
 <img src="/vid/EllipseExample.gif" style="zoom:200%;"/>
 
