@@ -9,7 +9,7 @@
     
       <h1>{{ .Params.heading }}</h1>
     {{ if isset .Params "handle" }}
-    <span class="handle"><color="#a14cff">@</color>{{ .Params.handle }}</span>
+    <span class="handle">@{{ .Params.handle }}</span>
     {{ end }}
     <h2>
       {{ .Params.subheading }}
