@@ -76,3 +76,6 @@ opublishDir = "public"
   title = "Manim"
   url = "/manim"
 
+
+[params.colors]
+    fancy = "#f06292"
