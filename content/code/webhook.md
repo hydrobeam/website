@@ -31,4 +31,4 @@ The dependencies are:
 
 Here's the final product:
 
-<img src="/img/overflow.png" alt="overflow" style="zoom:200%;"/>
+<img src="/img/overflow.jpg" alt="overflow" style="zoom:200%;"/>
