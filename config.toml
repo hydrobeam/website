@@ -65,12 +65,18 @@ opublishDir = "public"
   url = "/"
 
 [[menu.main]]
+identifier = "code"
+name = "code"
+title = "Code"
+url = "/code"
+
+[[menu.main]]
   identifier = "art"
   name = "art"
   title = "Art"
   url = "/art"
 
-  [[menu.main]]
+[[menu.main]]
   identifier = "manim"
   name = "manim"
   title = "Manim"
