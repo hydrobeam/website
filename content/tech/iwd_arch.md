@@ -3,9 +3,9 @@ title: "Arch iwd/WiFi Eduroam Setup - UWaterloo"
 date: 2022-07-07
 slug: "iwd_setup"
 description: "Sample config for Eduroam using `iwd` at the University of Waterloo."
-keywords: ["tech"]
+keywords: ["wifi", "arch", "linux", "install", "iwd", "waterloo"]
 draft: false
-tags: ["wifi", "arch", "linux", "install", "iwd", "waterloo"]
+tags: ["tech"]
 math: false
 toc: false
 ---
@@ -18,7 +18,7 @@ and now I've pretty much gotten used to it as a daily driver months after settin
 ## Config
 Here's the config file you should place at `/var/lib/iwd/eduroam.8021x`:
 
-```
+```toml
 [Security]
 EAP-Method=PEAP
 EAP-Identity=anonymous@uwaterloo.ca
@@ -39,7 +39,7 @@ by digging through the ["eduroam installer"](https://cat.eduroam.org/) (a python
 
 From this, `iwctl` (command line front-end for `iwd`) can get you connected:
 
-```
+```bash
 iwctl station wlan0 connect eduroam
 ```
 
@@ -50,14 +50,14 @@ And you're in!
 
 - Make sure everything in the config file is spelled correctly!
 
-- Also, when connecting to simpler networks, `iwd` will automatically generate these config files at `/var/lib/iwd/name_of_network`
+- Also, when connecting to simpler networks, `iwd` will automatically generate these config files at `/var/lib/iwd/name_of_network.type_of_network`
 
 
 ### Investigating Errors:
 
 When connecting to a network and it seems to arbitrarily not work, you can use:
 
-```
+```bash
 systemctl status iwd
 ```
 
