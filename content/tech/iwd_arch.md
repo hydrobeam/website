@@ -13,7 +13,7 @@ toc: false
 Setting up [iwd](https://wiki.archlinux.org/title/Iwd) when first installing Arch proved to be quite a
 hassle, especially since I didn't really have a good grasp on what I was doing. It's the recommended way
 of getting connected to the internet during the [arch install](https://wiki.archlinux.org/title/installation_guide)
-and now I've pretty much gotten used to it as a daily driver months after setting it up.
+and now I've pretty much gotten used to it as a daily driver months after setting it up. Here are some tips!
 
 ## Config
 Here's the config file you should place at `/var/lib/iwd/eduroam.8021x`:
