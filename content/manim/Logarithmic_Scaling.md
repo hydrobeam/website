@@ -77,11 +77,7 @@ With that out of the way, I realized this wasn’t going to be as simple as chan
 
 #### Composition over Inheritance 👀
 
-The `LogBase` class followed a system of composition over inheritance. I read about it in a blog about it and it seemed like all the rage. It seemed like I had a good shot at implementing a composition-esque approach so I did, and it turned out pretty well.  Side note: I am **very** against the notion of “always composition over inheritance”. It just doesn’t make sense!!! Something just *have* to inherit from each other, a car is simply a Vehicle, a Square is simply a `Mobject`. Maybe  I have a gross misunderstanding of when to apply composition, but I watched a talk claiming that you can always implement composition over inheritance, and `attrs` didn’t even support inheritance that well up until some random update which let you configure a custom `__post_init__`, and *even then*, they don’t even let you change the order of the MRO?? What if I need to start from the top to bottom, like it literally works normally when you inherit from classes? Ok enough ranting, back to the point.
-
-  
-
-
+The `LogBase` class followed a system of composition over inheritance. I read about it in a blog about it and it seemed like all the rage. It seemed like I had a good shot at implementing a composition-esque approach so I did, and it turned out pretty well.  Side note: I am **very** against the notion of “always composition over inheritance”. It just doesn’t make sense!!! Something just *have* to inherit from each other, a car is simply a Vehicle, a Square is simply a `Mobject`. Maybe  I have a gross misunderstanding of when to apply composition, but I watched a talk claiming that you can always implement composition over inheritance, and `attrs` didn’t really support inheritance that well up until an update which let you configure a custom `__post_init__`, and *even then*, you can't change the order of the MRO. Not sure about this design decision, maybe it introduces too much cost to support adjusting MRO order? Ok enough ranting, back to the point.
 
 🚧Under-Construction🚧
 

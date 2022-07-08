@@ -16,7 +16,7 @@ toc: false
 
 ## Why use the OpenGL renderer?
 
-- ***Immense*** speed improvement for rendering scenes.
+- ***Significant*** speed improvement for rendering scenes.
   - Shifted from rendering with `Cairo` to shaders with OpenGL
   - Shaders are GPU-accelerated whereas Cairo runs purely on the CPU
 - Live interactive window which allows for:
