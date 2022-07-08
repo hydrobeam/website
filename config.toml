@@ -71,10 +71,16 @@ title = "Code"
 url = "/code"
 
 [[menu.main]]
-  identifier = "manim"
-  name = "manim"
-  title = "Manim"
-  url = "/manim"
+identifier = "tech"
+name = "tech"
+title = "Tech"
+url = "/tech"
+
+[[menu.main]]
+identifier = "manim"
+name = "manim"
+title = "Manim"
+url = "/manim"
 
 
 [params.colors]
