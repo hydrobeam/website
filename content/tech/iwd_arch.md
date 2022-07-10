@@ -20,7 +20,7 @@ Since `iwd` is the recommended way of getting connected to the internet during t
 
 ## Config
 
-Here's the config file you should place at `/var/lib/iwd/eduroam.8021x`:
+Here's the config file you should place at `/var/lib/iwd/eduroam.8021x`. Be sure to replace the `EAP-PEAP-Phase2-Identity`/`EAP-PEAP-Phase2-Password` fields!
 
 ```toml
 [Security]
@@ -37,7 +37,7 @@ AutoConnect=true
 ```
 
 You can find the keys to the values in the Arch wiki, but the values are unique to each university, and are obtained 
-by digging through the ["eduroam installer"](https://cat.eduroam.org/) (a python script).
+by digging through the ["eduroam installer"](https://cat.eduroam.org/) (a python script). 
 
 ## Connecting
 
