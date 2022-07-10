@@ -10,12 +10,16 @@ math: false
 toc: false
 ---
 
+## Introduction
+
 Setting up [iwd](https://wiki.archlinux.org/title/Iwd) when first installing Arch proved to be quite a
-hassle, especially since I didn't really have a good grasp on what I was doing. It's the recommended way
-of getting connected to the internet during the [arch install](https://wiki.archlinux.org/title/installation_guide)
-and now I've pretty much gotten used to it as a daily driver months after setting it up. Here are some tips!
+hassle, especially because I was relying on campus WiFi via eduroam. Eduroam has a lot of mandatory configuration options that are abstracted away when using typical network managers.
+Since `iwd` is the recommended way of getting connected to the internet during the [arch install](https://wiki.archlinux.org/title/installation_guide), it felt particularly important to document how to set it up for beginners!
+
+> Note: This guide is specific to the University of Waterloo, but the setup is applicable to any other institution which uses `eduroam`
 
 ## Config
+
 Here's the config file you should place at `/var/lib/iwd/eduroam.8021x`:
 
 ```toml
@@ -46,16 +50,18 @@ iwctl station wlan0 connect eduroam
 And you're in!
 
 
-## Troubleshooting
+## Tips
 
 - Make sure everything in the config file is spelled correctly!
 
-- Also, when connecting to simpler networks, `iwd` will automatically generate these config files at `/var/lib/iwd/name_of_network.type_of_network`
+- Connecting to non-eduroam networks is much simpler, you just need the password to your network!
+
+- When connecting to other networks, `iwd` will automatically generate config files at `/var/lib/iwd/name_of_network.type_of_network`
 
 
 ### Investigating Errors:
 
-When connecting to a network and it seems to arbitrarily not work, you can use:
+When connecting to a network and it seems to inexplicably not work, you can use:
 
 ```bash
 systemctl status iwd
