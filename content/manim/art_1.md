@@ -3,9 +3,9 @@ title: "ManimCE stars over time"
 date: 2021-07-23
 slug: "stars"
 description: "Check how many stars ManimCE has overtime!"
-keywords: []
+keywords: ["github", "stars"]
 draft: false
-tags: [manim]
+tags: []
 math: false
 toc: false
 ---

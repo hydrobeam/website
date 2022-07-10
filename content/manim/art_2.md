@@ -3,9 +3,9 @@ title: "Refraction through a lens with Manim"
 date: 2021-11-04
 slug: "optics"
 description: "Optics with Manim!"
-keywords: []
+keywords: [manim, optics]
 draft: false
-tags: [manim]
+tags: []
 math: false
 toc: false
 ---

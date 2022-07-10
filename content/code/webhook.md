@@ -3,9 +3,9 @@ title: "StackOverflow Discord Webhook"
 date: 2022-02-12
 slug: "webhook"
 description: "Send incomding posts under a tag to a channel in Discord."
-keywords: ["code"]
+keywords: ["stackoverflow", "discord", "webhook", "tag"]
 draft: false
-tags: ["stackoverflow", "discord", "webhook", "tag"]
+tags: ["code_showcase"]
 math: false
 toc: false
 ---

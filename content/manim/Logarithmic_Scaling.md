@@ -3,14 +3,13 @@ title: "Implementing Logarithmic Scaling in Manim"
 date: 2021-10-06
 slug: "log"
 description: "Some thoughts I had while working on this feature."
-keywords: ["manim"]
+keywords: [python, manim, logarithm]
 draft: false
-tags: ["manim"]
+tags: [write_up]
 math: false
 toc: false
 ---
 
- 
 
 To help breathe some life into this website, I decided it might be nice to discuss my experience with implementing  [this PR](https://github.com/ManimCommunity/manim/pull/1812) which introduces log scaling for `Axes` in Manim. 
 

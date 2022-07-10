@@ -5,7 +5,7 @@ slug: "iwd_setup"
 description: "Sample config for Eduroam using `iwd` at the University of Waterloo."
 keywords: ["wifi", "arch", "linux", "install", "iwd", "waterloo"]
 draft: false
-tags: ["tech"]
+tags: ["linux", "guide"]
 math: false
 toc: false
 ---

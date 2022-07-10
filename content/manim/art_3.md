@@ -3,9 +3,9 @@ title: "Perlin Noise Vs Random Distrubition - Visualization"
 date: 2021-11-04
 slug: "perlin"
 description: "An animation to highlight the difference between the pseudo-random and random."
-keywords: []
+keywords: [perlin, manim, random, noise]
 draft: false
-tags: [manim]
+tags: []
 math: false
 toc: false
 ---
