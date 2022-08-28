@@ -76,9 +76,10 @@ Most of these are a little too involved for now, but I'll be covering the hits. 
 | `<SPC> h v` | Describes a variable                             |
 
 
-`M-x` (`Alt x`) is a keybind you'll be running into very often.
-It lists every command you have access to. You can search to filter through the list, and you typically won't come close to using most of the commands in this list.
-But it's useful for learning more about what a package can do. For example, try searching for `projectile` to get an idea of the commands you have access to (sometimes without keybindings), such as `projectile-replace` for `find and replace` functionality.
+`M-x` (`Alt x`) is a keybinding you'll be running into very often.
+It lists every command you have access to. You typically won't be using many of the commands in this list,
+but it's useful for learning more about what a package can do.
+For example, try searching for `projectile` to get an idea of the commands you have access to (sometimes without keybindings), such as `projectile-replace` for `find and replace` functionality.
 
 For describing/ learning more about commands (examples, docs etc...), try `<SPC> h k` and typing `<SPC> .` to learn more about the `find-file` function.
 Next, try looking at a description for the `doom-font` variable with `<SPC> h v`. 
@@ -86,12 +87,12 @@ Here you'll see documentation about how `Doom` configures its font. Which makes 
 
 ## Understanding Your Config
 
-| Keybinding    | Description                                                     |
-|---------------|-----------------------------------------------------------------|
-| `<SPC> f p`   | Find file in private config                                     |
-| `<SPC> h r r` | Reload your private config from within Emacs (like `doom sync`) |
-| `<SPC> q r`   | Restart Emacs and restore the current session                   |
-| `<SPC> h t`   | Choose a theme                                                  |
+| Keybinding    | Description                                             |
+|---------------|---------------------------------------------------------|
+| `<SPC> f p`   | Find file in private config                             |
+| `<SPC> h r r` | Reload your config from within Emacs (like `doom sync`) |
+| `<SPC> q r`   | Restart Emacs and restore the current session           |
+| `<SPC> h t`   | Choose a theme                                          |
 
 Located in `$DOOMDIR`, Doom's configuration is mainly controlled by three files: `init.el`, `config.el`, `packages.el`.
 To learn more about what each of these files do, I *highly* recommend reading through [this section](https://github.com/doomemacs/doomemacs/blob/develop/docs/getting_started.org#configure) in the doom docs.
