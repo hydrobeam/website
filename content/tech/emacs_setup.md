@@ -12,9 +12,10 @@ toc: true
 
 Are you tired of using a traditional editor? Looking for a break from the monotony... alongside a little Doom?
 
-Look no further! [Doom Emacs](https://github.com/doomemacs/doomemacs) is a *configuration framework* for Emacs that abstracts away a lot of the complexity that goes into perfecting your setup, making it a much friendlier.
-Fortunately, Doom still gives you all the freedom to push Emacs to its limit.
-Doom and Emacs let you configure your editor just the way you like, and with access to amazing tools like `Magit`, `Org` and `lsp`, you can push it to do just about anything!
+Look no further! [Doom Emacs](https://github.com/doomemacs/doomemacs) is a *configuration framework* for Emacs that abstracts away a lot of the complexity that goes into perfecting your setup, making it a much friendlier experience for beginners.
+Doom is a purposely light layer over Emacs and emphasizes performance and startup time, without sacrificing extensibility.
+It lets you configure Emacs just the way you like, while providing sane defaults and convenience.
+Through Emacs' amazing packages like `Magit`, `Org` and `lsp`, you can make the most of your editor.
 
 The purpose of this post is to give you an intro to Doom/Emacs and give a brief overview of some of its features!
 I'll be covering what a typical workflow looks like, how to configure Doom using its built in module system and some of my favourite (must have) packages.
@@ -107,7 +108,7 @@ Each module has built-in documentation that you can easily by typing `K` with yo
 
 When looking into installing additional packages from guides online, you'll first want to check whether there's a relevant module in `init.el` that you can activate instead because modules are pre-configured and are well integrated into Doom.
 
-If you've got some time on your hands, it would be neat to look through `init.el` and tweak it to your liking. I will also be going over my recommendations over in [Turn Emacs into an IDE](##Turn Emacs into an IDE).
+If you've got some time on your hands, it would be neat to look through `init.el` and tweak it to your liking. I will also be going over my recommendations over in [Turn Emacs into an IDE](#turn-emacs-into-an-ide).
 
 To have your changes take effect, you can run `doom sync`, or `<SPC> h r r` from within Emacs. 
 
