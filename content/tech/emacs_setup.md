@@ -32,10 +32,10 @@ When everything is set up, run `emacs` and you should be greeted to a splash scr
 
 ## First Moments
 
-So, now you're in Emacs, congratualations! But, how do you *do* anything? Here are some helpful keybindings to help you navigate around and start working with files. 
+So, now you're in Emacs, congratulations! But, how do you *do* anything? Here are some helpful keybindings to help you navigate around and start working with files. 
 
-| Keybinding | Description   |
-------------------------------
+| Keybinding  | Description                  |
+|-------------|------------------------------|
 | `<SPC> .`   | Find file                    |
 | `<SPC> ,`   | Switch buffer in a workspace |
 | `<SPC> b k` | Kill buffer                  |
@@ -48,8 +48,8 @@ If you feel that your buffer list is too crowded, or that you're fully done with
 
 I typically structure my business into specific directories, so it'd be helpful if Emacs let me work on projects like a typical editor. Well... it's Emacs, so of course you can. Here are some helpful project-related keybindings.
 
-| Keybinding | Description   |
-------------------------------
+| Keybinding    | Description                        |
+|---------------|------------------------------------|
 | `<SPC> p a`   | Add known project                  |
 | `<SPC> p p`   | Switch project                     |
 | `<SPC> <SPC>` | Find file in project               |
@@ -68,8 +68,8 @@ Well, there are handy commands for learning more about the functions we're using
 Most of these are a little too involved for now, but I'll be covering the hits. (You can also access these via `C-h`)
 
 
-| Keybinding | Description   |
-------------------------------
+| Keybinding  | Description                                      |
+|-------------|--------------------------------------------------|
 | `M-x ...`   | Search for and run any interactive function      |
 | `<SPC> h k` | Describes a command associated with a keybinding |
 | `<SPC> h f` | Describes a function                             |
@@ -86,8 +86,8 @@ Here you'll see documentation about how `Doom` configures its font. Which makes 
 
 ## Understanding Your Config
 
-| Keybinding | Description |
-------------------------------
+| Keybinding    | Description                                                     |
+|---------------|-----------------------------------------------------------------|
 | `<SPC> f p`   | Find file in private config                                     |
 | `<SPC> h r r` | Reload your private config from within Emacs (like `doom sync`) |
 | `<SPC> q r`   | Restart Emacs and restore the current session                   |
@@ -158,7 +158,7 @@ Here's a demo showcasing some basic configuration options:
 
 - [Configure theme](https://github.com/doomemacs/doomemacs/blob/develop/docs/faq.org#how-do-i-change-the-theme)
 
-`<SPC> h t` to view/demo themes. 
+`<SPC> h t` to view/demo themes. Also: [doomemeacs/themes](https://github.com/doomemacs/themes).
 
 ```elisp
 (setq doom-theme `doom-old-hope)
@@ -166,8 +166,30 @@ Here's a demo showcasing some basic configuration options:
 
 ### `packages.el`
 
+This is where you install packages that aren't built into Doom's modules. Before installing anything, give [the relevant section](https://github.com/doomemacs/doomemacs/blob/develop/docs/getting_started.org#package-management) in the docs a read, it contains warnings + good advice.
+
+
+#### Quick Packages overview:
+
+- If a package is available on one of Emacs's package repositories:
+
+```elisp
+(package! your-package)
+```
+
+- If not, you can specify from where to install the package.
+
+Here's an example with a package that offers excellent high contrast and accessible themes: prot's [`ef-themes`](https://protesilaos.com/emacs/ef-themes).
+
+```elisp
+(package! ef-themes :recipe (:host github :repo "protesilaos/ef-themes" :branch "main")) ;; really pretty themes
+```
+
+To have your changes take effect, you can run `doom sync`, or `<SPC> h r r` from within Emacs. 
 
 ## Turn Emacs into an IDE
+
+⚠️  ⚠️   IN PROGRESS ⚠️  ⚠️
 
 ### Languages
 
