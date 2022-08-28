@@ -30,7 +30,7 @@ Before getting started, I'd highly recommend getting (at least) somewhat familia
 
 Installing Emacs/Doom is very OS specific, so I'm just going to defer to the [doomemacs docs](https://github.com/doomemacs/doomemacs#install) here (if you're on Windows just use `WSL`).
 
-> A small note about Emacs versions, `emacs28` (the latest Emacs version at the time of writing) introduces the `native compilation` feature, which speeds up the execution of `Elisp`, Emacs' lisp variant. So it's an all around Good Thing™️.
+> A small note about Emacs versions, `emacs28` (the latest Emacs version at the time of writing) introduces the `native compilation` feature, which speeds up the execution of Elisp, Emacs' lisp variant. So it's an all around Good Thing™️.
 
 When everything is set up, run Emacs and you should be greeted to a splash screen like this:
 
@@ -120,8 +120,8 @@ To have your changes take effect, you can run `doom sync` or `<SPC> h r r` from 
 
 ### `config.el`
 
-`config.el` is where you configure (shocker!) the packages you install in `init.el` and `packages.el`. Emacs is built on `Elisp` (an Emacs-specific lisp variant), so your configuration will also be written in Elisp.
-However, you can get pretty far with just a basic understanding of Elisp.
+`config.el` is where you configure (shocker!) the packages you install in `init.el` and `packages.el`. Emacs is built on Elisp (an Emacs-specific lisp variant), so your configuration will also be written in Elisp.
+However, you can get pretty far with just a basic understanding of the language.
 
 Here's a rudimentary rundown:
 
@@ -142,7 +142,7 @@ Here's a rudimentary rundown:
       item3 30)
 
 ;; Lists
-(setq my-list '(1 2 3 4)) ;; lists of numbers
+(setq my-list '(1 2 3 4)) ;; list of numbers
 
 ;; Booleans
 (setq item t)   ;; true
