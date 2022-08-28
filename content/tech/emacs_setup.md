@@ -212,24 +212,29 @@ To have your changes take effect, you can run `doom sync` or `<SPC> h r r` from 
 
 ### `treesitter`- modern syntax highlighting
 
-### Projects
 
 
+## Very-Good™️  packages
 
-## Org mode
+### Org - plaintext, but better
 
-### Making Org Prettier
+#### Making Org Prettier
 
-### Org-babel
-
-
-## Magit
+#### Org-babel - execute code blocks in a file
 
 
-## Managing windows
+### Magit - a sane Git interface
+
+### Treemacs - view your files in the sidebar
 
 
-## Emacs daemon + tty: In And Out Quickly
+## General tips
+
+### Managing windows
+
+### Workspaces
+
+### Emacs daemon + tty: in and out quickly
 
   
   
