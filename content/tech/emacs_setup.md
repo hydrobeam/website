@@ -20,19 +20,20 @@ Through Emacs' amazing packages like `Magit`, `Org` and `lsp`, you can really ma
 The purpose of this post is to give you an intro to Doom/Emacs and give a brief overview of some of its features!
 
 I'll be covering:
-- What a typical workflow might look like + how to use Emacs
-- How to configure Doom using its built in module system
-- My recommendations for packages, config tweaks and how I like to use Emacs.
+- What a typical workflow might look like + how to use Emacs.
+- How to configure Doom using its built-in module system.
+- My recommendations for packages, config tweaks + how I like to use Emacs.
 
-Before getting started, I'd highly recommend getting somewhat familiar with `vim` keybindings (try `vimtutor` by installing [Neovim](https://neovim.io/) and running `nvim +Tutor`).
+Before getting started, I'd highly recommend getting (at least) somewhat familiar with `vim` keybindings (try `vimtutor` by installing [Neovim](https://neovim.io/) and running `nvim +Tutor`).
 
 ## Installation
 
 Installing Emacs/Doom is very OS specific, so I'm just going to defer to the [doomemacs docs](https://github.com/doomemacs/doomemacs#install) here (if you're on Windows just use `WSL`).
 
-> A small note about Emacs versions, `emacs28` (the latest Emacs version at the time of writing) introduces the `native compilation` feature, which speeds up the execution of Emacs' lisp variant: `elisp`. So it's an all around Good Thing™️.
+> A small note about Emacs versions, `emacs28` (the latest Emacs version at the time of writing) introduces the `native compilation` feature, which speeds up the execution of `Elisp`, Emacs' lisp variant. So it's an all around Good Thing™️.
 
 When everything is set up, run Emacs and you should be greeted to a splash screen like this:
+
 <img src="/img/doom_startup.jpg" alt="startup" style="zoom:200%;" />
 
 ## First Moments
@@ -46,7 +47,8 @@ So, now you're in Emacs, congratulations! But, how do you *do* anything? Here ar
 | `<SPC> b k` | Kill buffer                  |
 
 So, run `<SPC> .` and open a file of your choice.
-If you open a new one, and would like to navigate back to the previous file, you can switch the buffer that you're looking at with `<SPC> ,`.
+
+If you open another file and would like to navigate back, you can switch the buffer that you're looking at with `<SPC> ,`.
 If you feel that your buffer list is too crowded, or that you're fully done with working on the current file, use `<SPC> b k` to kill the buffer and remove it from the list.
 
 ### Projects/Workspaces
@@ -164,7 +166,7 @@ Here's a demo showcasing some basic configuration options:
 
 - [Configure theme](https://github.com/doomemacs/doomemacs/blob/develop/docs/faq.org#how-do-i-change-the-theme)
 
-`<SPC> h t` to view/demo themes. Also take a look at [doomemeacs/themes](https://github.com/doomemacs/themes) for screenshots.
+Use `<SPC> h t` to view/demo themes. Also take a look at [doomemeacs/themes](https://github.com/doomemacs/themes) for screenshots.
 
 ```elisp
 (setq doom-theme `doom-old-hope)
