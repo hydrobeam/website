@@ -1,0 +1,10 @@
+title="aquabeam"
+
+[author]
+name ="Laith Bahodi"
+headline="Just doing a little bit of coding"
+image="explosion.png"
+links = [
+      { github = "https://github.com/hydrobeam" },
+      { email = "mailto:laithbahodi@gmail.com" },
+]

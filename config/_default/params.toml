@@ -1,0 +1,26 @@
+
+# defaultAppearance="dark"
+colorScheme = "ocean"
+
+# website breaks with prism x dark mode
+# also makes giscus look weird
+autoSwitchAppearance="light"
+
+[homepage]
+layout="profile"
+
+[article]
+# showAuthor=false
+showComments=true
+# showTableOfContents=true
+showTaxonomies= true
+# showHeadingAnchors=true
+
+[list]
+  # showBreadcrumbs = true
+  groupByYear = false
+# showSummary=true
+
+
+[footer]
+showCopyright=false

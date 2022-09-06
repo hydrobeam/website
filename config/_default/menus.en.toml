@@ -1,0 +1,17 @@
+[[main]]
+  identifier = "code"
+  name = "code"
+  title = "Code"
+  url = "/code"
+
+[[main]]
+  identifier = "tech"
+  name = "tech"
+  title = "Tech"
+  url = "/tech"
+
+[[main]]
+  identifier = "manim"
+  name = "manim"
+  title = "Manim"
+  url = "/manim"
