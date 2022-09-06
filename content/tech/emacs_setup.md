@@ -4,7 +4,7 @@ date: 2022-09-04
 slug: "doom_emacs_intro"
 description: "Tips and tricks for getting started with Doom Emacs"
 keywords: ["doom", "doomemacs", "emacs", "setup", "guide", "tips", "tricks", "getting started"]
-draft: true
+draft: false
 tags: ["guide"]
 showTableOfContents: true
 ---
