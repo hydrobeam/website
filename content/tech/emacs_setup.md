@@ -6,6 +6,7 @@ description: "Tips and tricks for getting started with Doom Emacs"
 keywords: ["doom", "doomemacs", "emacs", "setup", "guide", "tips", "tricks", "getting started"]
 draft: false
 tags: ["guide"]
+showTableOfContents: true
 ---
 
 Are you tired of using a traditional editor?
@@ -56,12 +57,13 @@ If you feel that your buffer list is too crowded, or that you're fully done with
 I typically structure my business into specific directories, so it'd be helpful if Emacs let me work on projects like a typical editor. Well... it's Emacs, so of course you can. Here are some helpful project-related keybindings.
 
 
-| Keybinding    | Description                                                                 |
-|---------------|-----------------------------------------------------------------------------|
-| <kbd>SPC p a</kbd>   | Add known project                                                           |
-| <kbd>SPC p p</kbd>   | Switch project                                                              |
+| Keybinding         | Description                                                                 |
+|--------------------|-----------------------------------------------------------------------------|
+| <kbd>SPC p a</kbd> | Add known project                                                           |
+| <kbd>SPC p p</kbd> | Switch project                                                              |
 | <kbd>SPC SPC</kbd> | Find file in project                                                        |
-| <kbd>SPC /</kbd>     | Project wide search (with [ripgrep](https://github.com/BurntSushi/ripgrep)) |
+| <kbd>SPC /</kbd>   | Project wide search (with [ripgrep](https://github.com/BurntSushi/ripgrep)) |
+
 {{< alert  >}}
 **Warning!** For `projectile` to recognize a "project", it must contain a [special file](https://docs.projectile.mx/projectile/index.html#features) like a `.git` or `.projectile`. If it does not contain one, then it will silently remove your directory from the list.
 
@@ -96,8 +98,6 @@ Next, try looking at a description for the `doom-font` variable with <kbd>SPC h 
 Here you'll see documentation about how `Doom` configures its font. Which makes for a good segue about learning about how to configure Doom.
 
 ## Understanding Your Config
-
-
 
 | Keybinding           | Description                                             |
 |----------------------|---------------------------------------------------------|
@@ -213,7 +213,7 @@ If you're coming over from another editor or IDE, you might be wondering how to 
 Fortunately, it is very much possible! And thanks to Doom, it's also quite easy to get up and running.
 Thanks to Doom's great defaults, it mostly just involves toggling some modules in your `init.el` and carrying on as usual. 
 
-### Languages
+### Setting Up Languages
 
 To get all the configuration, packages and conveniences you'd expect for a programming language of your choice, simply head over to the `:lang` section of your `init.el` and un-commenting the language you'd like (removing the `;;`).
 After that, make sure to reload your private config to make your changes to take effect.
