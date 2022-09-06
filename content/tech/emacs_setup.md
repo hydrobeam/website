@@ -210,17 +210,16 @@ To have your changes take effect, you can run `doom sync` or <kbd>SPC h r r</kbd
 ## Turn Emacs into an IDE
 
 If you're coming over from another editor or IDE, you might be wondering how to make Emacs do all the fancy things your previous editor could do, or if it's even possible.
-Fortunately, it is very much possible! And thanks to Doom, it's also quite easy to get up and running.
-Thanks to Doom's great defaults, it mostly just involves toggling some modules in your `init.el` and carrying on as usual. 
+Fortunately, it is very much possible and also very easy to get up and running.
+Thanks to Doom's great defaults, all you have to do is toggle some modules in your `init.el` and carry on like usual. 
 
-### Setting Up Languages
+### Working with languages
 
-To get all the configuration, packages and conveniences you'd expect for a programming language of your choice, simply head over to the `:lang` section of your `init.el` and un-commenting the language you'd like (removing the `;;`).
+To get all the configuration, packages and conveniences you'd expect for a programming language of your choice, simply head over to the `:lang` section of your `init.el` and un-comment the language of your choice.
 After that, make sure to reload your private config to make your changes to take effect.
-Some modules also have additional flags that you can enable for additional functionality specific to that language. 
-You can find out which flags you can enable by typing <kbd>K</kbd> over a module.
+Some modules also have additional flags that you can enable for additional language-specific features. 
 
-For instance, I enable `javascript` integration with the following line in my `init.el`:
+For instance, I enable `javascript` integration with the following line in my `init.el`
 
 ```lisp
 (javascript +lsp +tree-sitter) ; all(hope(abandon(ye(who(enter(here))))))
@@ -230,17 +229,19 @@ These flags in particular (`lsp` + `tree-sitter`) are very important and applica
 I'll be covering them in the following sections.
 
 
+{{< alert "edit" >}}
+You can find out which flags are available by typing <kbd>K</kbd> over a module.
+{{< /alert >}}
+
 ### `lsp` - VSCode-esque intellisense 
 
 The `lsp` module integrates [language servers](https://langserver.org/) into Emacs, providing features like jump-to-definition, code completion, real-time linting and more!
 To get started, enable the `lsp` module under `:tools` which will configure and install [`lsp-mode`](https://emacs-lsp.github.io/lsp-mode/). 
 
-Then, for each language where you'd like to make use of `lsp` integration, just add the `+lsp` flag in your `init.el`.
+Then, for each language where you'd like to take advantage of `lsp` integration, just add the `+lsp` flag in your `init.el`.
 If you do not have an appropriate language server installed, `lsp-mode` will prompt you to install it on your behalf. 
 
-When first opening a file for which you've enable `lsp` integration, you'll see the following message:
-
-
+When first opening a file that supports `lsp`, you'll see the following message:
 
 ![](/img/lsp-mode-first.jpg "Initial LSP-mode view")
 
@@ -261,23 +262,22 @@ Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped 
 | <kbd>SPC c k</kbd>/<kbd>K</kbd> | View documentation of an item                                              |
 
 
-### `treesitter`- modern syntax highlighting
+### Tree-sitter - modern syntax highlighting
 
 The built in Emacs syntax highlighting for some languages can be lacking at times.
-Fortunately, thanks to `tree-sitter` there's a way to improve it! 
+Fortunately, thanks to Tree-sitter there's a way to improve it! 
 
 I'll defer to the [`emacs-tree-sitter`](https://emacs-tree-sitter.github.io/) package for an explanation.
-Essentially, `tree-sitter` introduces more performant and robust syntax highlighting which gives you more control over the buffer.
+Essentially, Tree-sitter introduces more performant and robust syntax highlighting which gives you more control over the buffer.
 Not all languages currently have support for tree-sitter parsing (refer to the module docs for more info).
 
-To enable `tree-sitter` support for a supported language, just add the `+tree-sitter` flag to the module.
+To enable Tree-sitter support for a supported language, just add the `+tree-sitter` flag to the module.
 
 
 ### `vterm`- a sweet terminal
 
 Every good editor needs an even better terminal. Emacs has a few solutions for built in terminals, but `vterm` is the clear winner.
-Due to integrating `libvterm`, an external C library, it is fast and offers "near universal compatibility with terminal applications" (according to the project). 
-To read more about it, visit the [project repository](https://github.com/akermu/emacs-libvterm).
+Since it's based on `libvterm` (an external C library), it's fast, light and offers "near universal compatibility with terminal applications" (according to the [project repository](https://github.com/akermu/emacs-libvterm)).
 
 To enable it, activate the `vterm` module in your `init.el`.
 However, since it requires an external dependency, you'll be prompted to build `vterm-module.so` during the installation process. 
@@ -290,21 +290,9 @@ Here are the keybindings you need to know about:
 | <kbd>SPC o t</kbd> | Open a terminal buffer                                                                       |
 | <kbd>SPC o T</kbd> | Open a terminal buffer in your current window <br> (allows having multiple open terminal buffers) |
 
-
-
-## Very-Good™️  packages
-
-### Org - plaintext, but better
-
-#### Making Org Prettier
-
-#### Org-babel - execute code blocks in a file
-
-#### Latex/PDF export
+### Treemacs - view your files in the sidebar
 
 ### Magit - a sane Git interface
-
-### Treemacs - view your files in the sidebar
 
 
 ## General tips
