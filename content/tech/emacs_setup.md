@@ -41,7 +41,6 @@ When everything is set up, run Emacs and you should be greeted to a splash scree
 So, now you're in Emacs, congratulations! But, how do you *do* anything? Here are some helpful keybindings to help you navigate around and start working with files. 
 
 
-<br>
 | Keybinding  | Description                  |
 |-------------|------------------------------|
 | `<SPC> .`   | Find file                    |
@@ -58,7 +57,6 @@ If you feel that your buffer list is too crowded, or that you're fully done with
 I typically structure my business into specific directories, so it'd be helpful if Emacs let me work on projects like a typical editor. Well... it's Emacs, so of course you can. Here are some helpful project-related keybindings.
 
 
-<br>
 | Keybinding    | Description                                                                 |
 |---------------|-----------------------------------------------------------------------------|
 | `<SPC> p a`   | Add known project                                                           |
@@ -80,7 +78,6 @@ Most of these are a little too involved for now, but I'll be covering the hits (
 
 
 
-<br>
 | Keybinding  | Description                                      |
 |-------------|--------------------------------------------------|
 | `M-x ...`   | Search for and run any interactive function      |
@@ -102,7 +99,6 @@ Here you'll see documentation about how `Doom` configures its font. Which makes 
 
 
 
-<br>
 | Keybinding    | Description                                             |
 |---------------|---------------------------------------------------------|
 | `<SPC> f p`   | Find file in private config                             |
@@ -252,7 +248,6 @@ Although, if the project root doesn't look right, then you might want to set it 
 
 Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped together under  `<SPC-c ...>`:
 
-<br>
 | Keybinding      | Description                                              |
 |-----------------|----------------------------------------------------------|
 | `gd`            | Go to definition (use `C-o` to return, `C-i` to go back) |
@@ -285,7 +280,6 @@ Refer to the [module docs](https://docs.doomemacs.org/latest/modules/term/vterm/
 
 Here are the keybindings you need to know about:
 
-<br>
 | Keybinding  | Description                                                                                  |
 |-------------|----------------------------------------------------------------------------------------------|
 | `<SPC> o t` | Open a terminal buffer                                                                       |
