@@ -1,6 +1,6 @@
 ---
 title: "Getting Started with Doom Emacs"
-date: 2022-07-08
+date: 2022-09-04
 slug: "doom_emacs_intro"
 description: "Tips and tricks for getting started with Doom Emacs"
 keywords: ["doom", "doomemacs", "emacs", "setup", "guide", "tips", "tricks", "getting started"]
@@ -17,7 +17,7 @@ Doom is a purposely light layer over Emacs and emphasizes performance and startu
 It lets you configure Emacs just the way you like, while providing sane defaults and convenience.
 Through Emacs' amazing packages like `Magit`, `Org` and `lsp`, you can really make the most of your editor!
 
-The purpose of this post is to give you an intro to Doom/Emacs and give a brief overview of some of its features!
+The purpose of this post is to give you an intro to Doom/Emacs and offer an overview of some of its features!
 
 I'll be covering:
 - What a typical workflow might look like + how to use Emacs.
@@ -40,6 +40,8 @@ When everything is set up, run Emacs and you should be greeted to a splash scree
 
 So, now you're in Emacs, congratulations! But, how do you *do* anything? Here are some helpful keybindings to help you navigate around and start working with files. 
 
+
+<br>
 | Keybinding  | Description                  |
 |-------------|------------------------------|
 | `<SPC> .`   | Find file                    |
@@ -55,6 +57,8 @@ If you feel that your buffer list is too crowded, or that you're fully done with
 
 I typically structure my business into specific directories, so it'd be helpful if Emacs let me work on projects like a typical editor. Well... it's Emacs, so of course you can. Here are some helpful project-related keybindings.
 
+
+<br>
 | Keybinding    | Description                                                                 |
 |---------------|-----------------------------------------------------------------------------|
 | `<SPC> p a`   | Add known project                                                           |
@@ -75,6 +79,8 @@ Well, there are handy commands for learning more about the functions we're using
 Most of these are a little too involved for now, but I'll be covering the hits (You can also access these via `C-h`).
 
 
+
+<br>
 | Keybinding  | Description                                      |
 |-------------|--------------------------------------------------|
 | `M-x ...`   | Search for and run any interactive function      |
@@ -94,6 +100,9 @@ Here you'll see documentation about how `Doom` configures its font. Which makes 
 
 ## Understanding Your Config
 
+
+
+<br>
 | Keybinding    | Description                                             |
 |---------------|---------------------------------------------------------|
 | `<SPC> f p`   | Find file in private config                             |
@@ -108,7 +117,7 @@ To learn more about what each of these files do, I *highly* recommend reading th
 
 `init.el` contains your `doom!` block, which is how you'll be configuring which packages/modules Doom installs. To get an overview of how to work with it, here's the [relevant section](https://github.com/doomemacs/doomemacs/blob/develop/docs/getting_started.org#modules) in the docs about modules. 
 
-Each module has built-in documentation that you can easily by typing `K` with your cursor over the module. As of the time of writing, the docs are still a work in progress, but you can still find helpful information about module flags and packages that a module installs. 
+Each module has built-in documentation that you can easily view by typing `K` with your cursor over the module. As of the time of writing, the docs are still a work in progress, but you can still find helpful information about module flags and packages that a module installs. 
 
 <img src="/img/module_docs.jpg" alt="module-docs" style="zoom:200%;" />
 
@@ -120,8 +129,10 @@ To have your changes take effect, you can run `doom sync` or `<SPC> h r r` from 
 
 ### `config.el`
 
-`config.el` is where you configure (shocker!) the packages you install in `init.el` and `packages.el`. Emacs is built on Elisp (an Emacs-specific lisp variant), so your configuration will also be written in Elisp.
-However, you can get pretty far with just a basic understanding of the language.
+config.el` is where you configure (shocker!) the packages you install in
+`init.el` and `packages.el`. Emacs is built on Elisp (an Emacs-specific lisp
+variant), so your configuration will also be written in Elisp. However, you can
+get pretty far with just a basic understanding of the language.
 
 Here's a rudimentary rundown:
 
@@ -156,7 +167,7 @@ You can get a **LOT** deeper into `Elisp`, but this is good enough for now.
 
 Here's a demo showcasing some basic configuration options:
 
-#### Basic configuration
+#### Basic `config.el` setup
 
 - [Configure font](https://github.com/doomemacs/doomemacs/blob/develop/docs/faq.org#how-do-i-change-the-fonts)
 
@@ -177,7 +188,7 @@ Use `<SPC> h t` to view/demo themes. Also take a look at [doomemeacs/themes](htt
 This is where you install packages that aren't built into Doom's modules. Before installing anything, give [the relevant section](https://github.com/doomemacs/doomemacs/blob/develop/docs/getting_started.org#package-management) in the docs a read, it contains warnings + good advice.
 
 
-#### Quick packages overview:
+#### Quick packages overview
 
 In short:
 
@@ -202,15 +213,83 @@ To have your changes take effect, you can run `doom sync` or `<SPC> h r r` from 
 
 ## Turn Emacs into an IDE
 
-⚠️  ⚠️   IN PROGRESS ⚠️  ⚠️
+If you're coming over from another editor or IDE, you might be wondering how to make Emacs do all the fancy things your previous editor could do, or if it's even possible.
+Fortunately, it is very much possible! And thanks to Doom, it's also quite easy to get up and running.
+Thanks to Doom's great defaults, it mostly just involves toggling some modules in your `init.el` and carrying on as usual. 
 
 ### Languages
 
+To get all the configuration, packages and conveniences you'd expect for a programming language of your choice, simply head over to the `:lang` section of your `init.el` and un-commenting the language you'd like (removing the `;;`).
+After that, make sure to reload your private config to make your changes to take effect.
+Some modules also have additional flags that you can enable for additional functionality specific to that language. 
+You can find out which flags you can enable by typing `K` over a module.
+
+For instance, I enable `javascript` integration with the following line in my `init.el`:
+
+```lisp
+(javascript +lsp +tree-sitter) ; all(hope(abandon(ye(who(enter(here))))))
+```
+
+These flags in particular (`lsp` + `tree-sitter`) are very important and applicable to many languages!
+I'll be covering them in the following sections.
+
+
 ### `lsp` - VSCode-esque intellisense 
+
+The `lsp` module integrates [language servers](https://langserver.org/) into Emacs, providing features like jump-to-definition, code completion, real-time linting and more!
+To get started, enable the `lsp` module under `:tools` which will configure and install [`lsp-mode`](https://emacs-lsp.github.io/lsp-mode/). 
+
+Then, for each language where you'd like to make use of `lsp` integration, just add the `+lsp` flag in your `init.el`.
+If you do not have an appropriate language server installed, `lsp-mode` will prompt you to install it on your behalf. 
+
+When first opening a file for which you've enable `lsp` integration, you'll see the following message:
+
+<img src="/img/lsp-mode-first.jpg" alt="lsp-mode-project" style="zoom:200%;" />
+
+The first option to import the project root (`i`) is probably the one you want.
+Although, if the project root doesn't look right, then you might want to set it yourself with `I`.
+**Warning**: be careful and avoid when setting extremely large directories (like your home dir) as the project root, since `lsp-mode` will then watch every file in the directory, slowing down emacs. 
+
+Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped together under  `<SPC-c ...>`:
+
+<br>
+| Keybinding      | Description                                              |
+|-----------------|----------------------------------------------------------|
+| `gd`            | Go to definition (use `C-o` to return, `C-i` to go back) |
+| `gD`            | Find all references of the item                          |
+| `<SPC> c r`     | Rename an item (context aware)                           |
+| `<SPC> c k`/`K` | View documentation of an item                            |
+
+
+### `treesitter`- modern syntax highlighting
+
+The built in Emacs syntax highlighting for some languages can be lacking at times.
+Fortunately, thanks to `tree-sitter` there's a way to improve it! 
+
+I'll defer to the [`emacs-tree-sitter`](https://emacs-tree-sitter.github.io/) package for an explanation.
+Essentially, `tree-sitter` introduces more performant and robust syntax highlighting which gives you more control over the buffer.
+Not all languages currently have support for tree-sitter parsing (refer to the module docs for more info).
+
+To enable `tree-sitter` support for a supported language, just add the `+tree-sitter` flag to the module.
+
 
 ### `vterm`- a sweet terminal
 
-### `treesitter`- modern syntax highlighting
+Every good editor needs an even better terminal. Emacs has a few solutions for built in terminals, but `vterm` is the clear winner.
+Due to integrating `libvterm`, an external C library, it is fast and offers "near universal compatibility with terminal applications" (according to the project). 
+To read more about it, visit the [project repository](https://github.com/akermu/emacs-libvterm).
+
+To enable it, activate the `vterm` module in your `init.el`.
+However, since it requires an external dependency, you'll be prompted to build `vterm-module.so` during the installation process. 
+Refer to the [module docs](https://docs.doomemacs.org/latest/modules/term/vterm/) if anything goes wrong.
+
+Here are the keybindings you need to know about:
+
+<br>
+| Keybinding  | Description                                                                                  |
+|-------------|----------------------------------------------------------------------------------------------|
+| `<SPC> o t` | Open a terminal buffer                                                                       |
+| `<SPC> o T` | Open a terminal buffer in your current window (allows having multiple open terminal buffers) |
 
 
 
@@ -222,6 +301,7 @@ To have your changes take effect, you can run `doom sync` or `<SPC> h r r` from 
 
 #### Org-babel - execute code blocks in a file
 
+#### Latex/PDF export
 
 ### Magit - a sane Git interface
 
@@ -236,6 +316,3 @@ To have your changes take effect, you can run `doom sync` or `<SPC> h r r` from 
 
 ### Emacs daemon + tty: in and out quickly
 
-  
-  
-  
