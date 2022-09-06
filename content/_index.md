@@ -1,6 +1,6 @@
 ---
-heading: "Hi, I'm Laith!"
-subheading: "Just doing a little bit of coding."
+title: "Home page"
+description: "aquabeam's site to store cool stuff"
 handle: "aquabeam"
 ---
 
