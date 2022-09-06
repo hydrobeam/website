@@ -244,7 +244,8 @@ When first opening a file for which you've enable `lsp` integration, you'll see 
 
 The first option to import the project root (`i`) is probably the one you want.
 Although, if the project root doesn't look right, then you might want to set it yourself with `I`.
-**Warning**: be careful and avoid when setting extremely large directories (like your home dir) as the project root, since `lsp-mode` will then watch every file in the directory, slowing down emacs. 
+
+***Warning***: be careful and avoid setting extremely large directories (like your home dir) as the project root, since `lsp-mode` will then watch every file in the directory, slowing down emacs. 
 
 Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped together under  `<SPC-c ...>`:
 
