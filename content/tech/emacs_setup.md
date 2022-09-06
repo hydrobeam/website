@@ -159,11 +159,7 @@ Here's a rudimentary rundown:
 (message "hello")
 ```
 
-You can get a **LOT** deeper into `Elisp`, but this is good enough for now.
-
-Here's a demo showcasing some basic configuration options:
-
-#### Basic `config.el` setup
+You can get a **LOT** deeper into `Elisp`, but this is good enough for now. Here's a demo showcasing some basic configuration options:
 
 - [Configure font](https://github.com/doomemacs/doomemacs/blob/develop/docs/faq.org#how-do-i-change-the-fonts)
 
@@ -178,6 +174,23 @@ Use <kbd>SPC h t</kbd> to view/demo themes. Also take a look at [doomemeacs/them
 ```elisp
 (setq doom-theme `doom-old-hope)
 ```
+
+#### More advanced configuration
+
+```elisp
+(use-package! markdown-mode
+  :defer t
+  :config
+  (setq markdown-fontify-code-blocks-natively t)
+  )
+```
+
+- `use-package!` is a macro for grouping together related configurations. It helps keep your `config.el` structured as it grows. 
+- `:defer` is a property which delays loading the package until needed (i.e. when you call `treemacs`), which helps improve startup time by not loading packages you might not need.
+
+{{< alert >}}
+**Caution!** When writing your own config, make sure to use either `:after PACKAGE` or `:defer t` in `use-package!` blocks for lazy loading.
+{{< /alert >}}
 
 ### `packages.el`
 
@@ -291,6 +304,51 @@ Here are the keybindings you need to know about:
 | <kbd>SPC o T</kbd> | Open a terminal buffer in your current window <br> (allows having multiple open terminal buffers) |
 
 ### Treemacs - view your files in the sidebar
+
+Having a project drawer is a very convenient tool for managing files and understanding your project's directory structure.
+Thankfully Doom provides the `treemacs` module which does just that!
+Simply enable `treemacs` in your `init.el` (also consider the `+lsp` flag for some additional `lsp-mode` integration)
+
+<!-- have to do it like this because the image is too wide, and the figure shortcode won't accept width as a parameter -->
+<!-- the class makes it rounded here -->
+<!-- TODO: figure out how to center -->
+<figure>
+    <img
+    src="/img/treemacs-view.jpg" 
+    class="my-0 rounded-md"
+    alt="A file viewer in Emacs" 
+    width=250 />
+  <figcaption>Treemacs Sidebar</figcaption>
+</figure>
+
+I also have some additional configuration in my `config.el` to improve its appearance and functionality.
+
+```elisp
+(use-package! treemacs
+  :defer t
+  :config
+  ;; allows you to C-w C-w to treemacs
+  (setq treemacs-is-never-other-window nil)
+  ;; alters file icons to be more vscode-esque (better 😼)
+  ;; https://github.com/doomemacs/themes/wiki/Extension:-Treemacs
+  (setq doom-themes-treemacs-theme "doom-colors")
+  )
+```
+
+Here's an overview of the keybinds I use most frequently:
+
+| Keybinding         | Description                                      |
+|--------------------|--------------------------------------------------|
+| <kbd>SPC o p</kbd> | Initialize/toggle treemacs                       |
+| <kbd>SPC o P</kbd> | Focus the current file in the treemacs window    |
+| <kbd>cf</kbd>      | Create a file                                    |
+| <kbd>cd</kbd>      | Create a directory                               |
+| <kbd>R</kbd>       | Rename a file/dir                                |
+| <kbd>m</kbd>       | Move a file/dir                                  |
+| <kbd> < </kbd>     | Decrease width of side pane                      |
+| <kbd> > </kbd>     | Increase width of side pane                      |
+| <kbd>M-H</kbd>     | Move the project root one level up               |
+| <kbd>M-L</kbd>     | Move the project root one level down (at cursor) |
 
 ### Magit - a sane Git interface
 
