@@ -10,8 +10,6 @@ math: false
 toc: false
 ---
 
-
-
 # OpenGL Guide - Updated November 2021
 
 ## Why use the OpenGL renderer?
@@ -32,7 +30,7 @@ toc: false
 ## Main Flags
 
 - `--renderer=opengl`
-  -  The principal flag to use the opengl renderer. 
+  -  The principal flag to use the OpenGL renderer. 
   - `-p`**must** be passed to activate the interactive window
 - `--write_to_movie` produces an mp4 file.
   - Moving the camera via the interactive window **will** impact the mp4 produced.
@@ -46,11 +44,10 @@ toc: false
   - Currently are not anti-aliased, so mobjects may appear pixelated if examined closely
   - **Unknowns**: performance difference.
 - `--window_position`
-  - Accepts  a direction (LEFT, RIGHT, UR, UL)  and positions the interactive window accordingly
+  - Accepts a direction (LEFT, RIGHT, UR, UL) and positions the interactive window accordingly
   - Also accepts tuple coordinates (400,400) to position the top-left corner of the window 
 - `--window_size`
   - The window automatically adjusts to take up a quarter of your monitor, but can also be manually adjusted.
-
 
 
 ## `self.interactive_embed()`
@@ -67,7 +64,7 @@ class OpenGLShow(Scene):
         self.interactive_embed()
 ```
 
-- Can interact with the scene and its mobjects: (`self.<method>` is NOT needed and will NOT work )
+- Can interact with the scene and its mobjects: (`self.<method>` is NOT needed and will NOT work)
   - `add(Circle()) `: adds a circle to the scene
   - `remove(circ) ` will remove the original circle from the scene
   - `square.get_center()` will return the center of the original square
@@ -88,12 +85,12 @@ class VGroup(VMobject, metaclass=ConvertToOpenGL)
 ```
 
 - This tells Manim to use the different base Mobjects depending on the renderer used.
-  - `VMobject` --> `OpenGLVMobject`
-  - `Mobject` --> `OpenGLVMobject`
-  - Surface --> `OpenGLSurface`
+  - `VMobject` ⇒ `OpenGLVMobject`
+  - `Mobject` ⇒ `OpenGLVMobject`
+  - Surface ⇒ `OpenGLSurface`
 - ***IMPORTANT***: calling `VMobject`/`Mobject` /`Surface` directly will ***BREAK*** `OpenGL` scenes, use `OpenGLMobject` /`OpenGLVMobject`/`OpenGLSurface` instead.
 
-### Currently known code that is not yet duo-compatible:
+### Currently, known code that is not yet duo-compatible:
 
 - `ImageMobject`, in progress at [#1837](https://github.com/ManimCommunity/manim/pull/1837)
 - There may be other code that is not compatible, if you find some, please let us know!
@@ -113,7 +110,7 @@ class VGroup(VMobject, metaclass=ConvertToOpenGL)
 ## GUI + Flags
 
 - Manim supports a GUI interface, currently not very easy to use, but it is possible, (see `example_scenes/opengl.py/GuiTest`)
-- DearPyGUI must be explicitly installed first (`pip install dearpygui`) then can be enabled via  `--enable_gui`
+- DearPyGUI must be explicitly installed first (`pip install dearpygui`) then can be enabled via `--enable_gui`
 - Allows for:
   - Live scene switching
   - Rerunning a scene after rendering is complete
@@ -131,4 +128,4 @@ class VGroup(VMobject, metaclass=ConvertToOpenGL)
 
 **Image** :
 
-<img src="/img/opengl_showcase.png" alt="opengl_showcase" style="zoom:200%;" />
+![](/img/opengl_showcase.png "Showcase of OpenGL features in Manim")

@@ -6,11 +6,10 @@ description: "Tips and tricks for getting started with Doom Emacs"
 keywords: ["doom", "doomemacs", "emacs", "setup", "guide", "tips", "tricks", "getting started"]
 draft: false
 tags: ["guide"]
-math: false
-toc: true
 ---
 
-Are you tired of using a traditional editor? Looking for a break from the monotony... alongside a bit of Doom?
+Are you tired of using a traditional editor?
+Looking for a break from the monotony... plus a little bit of Doom?
 
 Look no further! [Doom Emacs](https://github.com/doomemacs/doomemacs) is a *configuration framework* for Emacs that abstracts away a lot of the complexity that goes into perfecting your setup, making it a much friendlier experience for beginners.
 Doom is a purposely light layer over Emacs and emphasizes performance and startup time, without sacrificing extensibility.
@@ -34,23 +33,23 @@ Installing Emacs/Doom is very OS specific, so I'm just going to defer to the [do
 
 When everything is set up, run Emacs and you should be greeted to a splash screen like this:
 
-<img src="/img/doom_startup.jpg" alt="startup" style="zoom:200%;" />
+![](/img/doom_startup.jpg "Initial Doom Emacs View")
 
 ## First Moments
 
 So, now you're in Emacs, congratulations! But, how do you *do* anything? Here are some helpful keybindings to help you navigate around and start working with files. 
 
 
-| Keybinding  | Description                  |
-|-------------|------------------------------|
-| `<SPC> .`   | Find file                    |
-| `<SPC> ,`   | Switch buffer in a workspace |
-| `<SPC> b k` | Kill buffer                  |
+| Keybinding         | Description                  |
+|--------------------|------------------------------|
+| <kbd>SPC .</kbd>   | Find file                    |
+| <kbd>SPC ,</kbd>   | Switch buffer in a workspace |
+| <kbd>SPC b k</kbd> | Kill buffer                  |
 
-So, run `<SPC> .` and open a file of your choice.
+So, run <kbd>SPC .</kbd> and open a file of your choice.
 
-If you open another file and would like to navigate back, you can switch the buffer that you're looking at with `<SPC> ,`.
-If you feel that your buffer list is too crowded, or that you're fully done with working on the current file, use `<SPC> b k` to kill the buffer and remove it from the list.
+If you open another file and would like to navigate back, you can switch the buffer that you're looking at with <kbd>SPC ,</kbd>.
+If you feel that your buffer list is too crowded, or that you're fully done with working on the current file, use  <kbd>SPC b k</kbd>  to kill the buffer and remove it from the list.
 
 ### Projects/Workspaces
 
@@ -59,52 +58,53 @@ I typically structure my business into specific directories, so it'd be helpful 
 
 | Keybinding    | Description                                                                 |
 |---------------|-----------------------------------------------------------------------------|
-| `<SPC> p a`   | Add known project                                                           |
-| `<SPC> p p`   | Switch project                                                              |
-| `<SPC> <SPC>` | Find file in project                                                        |
-| `<SPC> /`     | Project wide search (with [ripgrep](https://github.com/BurntSushi/ripgrep)) |
+| <kbd>SPC p a</kbd>   | Add known project                                                           |
+| <kbd>SPC p p</kbd>   | Switch project                                                              |
+| <kbd>SPC SPC</kbd> | Find file in project                                                        |
+| <kbd>SPC /</kbd>     | Project wide search (with [ripgrep](https://github.com/BurntSushi/ripgrep)) |
+{{< alert  >}}
+**Warning!** For `projectile` to recognize a "project", it must contain a [special file](https://docs.projectile.mx/projectile/index.html#features) like a `.git` or `.projectile`. If it does not contain one, then it will silently remove your directory from the list.
 
-*NOTE*: For `projectile` to recognize a "project", it must contain a [special file](https://docs.projectile.mx/projectile/index.html#features) like a `.git` or `.projectile`. If it does not contain one, then it will silently remove your directory from the list.
+{{< /alert >}}
 
 ### Getting help + Discovery
 
 You might've heard that Emacs is self-documenting, but how do we actually take advantage of that?
 
-Well, there are handy commands for learning more about the functions we're using in addition to discovering new ones. Type `<SPC> h` and wait for a moment to view the possible commands you can run for getting help.
+Well, there are handy commands for learning more about the functions we're using in addition to discovering new ones. Type <kbd>SPC h</kbd> and wait for a moment to view the possible commands you can run for getting help.
 
-<img src="/img/which_key.jpg" alt="which-key" style="zoom:200%;" />
+![](/img/which_key.jpg "Show possible keybindings with `which-key`")
 
-Most of these are a little too involved for now, but I'll be covering the hits (You can also access these via `C-h`).
-
-
-
-| Keybinding  | Description                                      |
-|-------------|--------------------------------------------------|
-| `M-x ...`   | Search for and run any interactive function      |
-| `<SPC> h k` | Describes a command associated with a keybinding |
-| `<SPC> h f` | Describes a function                             |
-| `<SPC> h v` | Describes a variable                             |
+Most of these are a little too involved for now, but I'll be covering the hits (You can also access these via <kbd>C-h</kbd>).
 
 
-`M-x` (`Alt x`) is a very commonly used keybinding.
+| Keybinding         | Description                                      |
+|--------------------|--------------------------------------------------|
+| <kbd>M-x ...</kbd> | Search for and run any interactive function      |
+| <kbd>SPC h k</kbd> | Describes a command associated with a keybinding |
+| <kbd>SPC h f</kbd> | Describes a function                             |
+| <kbd>SPC h v</kbd> | Describes a variable                             |
+
+
+<kbd>M-x</kbd> (<kbd>Alt x</kbd>) is a very commonly used keybinding.
 It lists every command you have access to. You typically won't be using many of the commands in this list,
 but it's useful for learning more about what a package can do.
 For example, try searching for `projectile` to get an idea of the commands you have access to (sometimes without keybindings), such as `projectile-replace` for `find and replace` functionality.
 
-For describing/ learning more about commands (examples, docs etc...), try `<SPC> h k` and typing `<SPC> .` to learn more about the `find-file` function.
-Next, try looking at a description for the `doom-font` variable with `<SPC> h v`. 
+For describing/ learning more about commands (examples, docs etc...), try <kbd>SPC h k</kbd> and typing <kbd>SPC .</kbd> to learn more about the `find-file` function.
+Next, try looking at a description for the `doom-font` variable with <kbd>SPC h v</kbd>. 
 Here you'll see documentation about how `Doom` configures its font. Which makes for a good segue about learning about how to configure Doom.
 
 ## Understanding Your Config
 
 
 
-| Keybinding    | Description                                             |
-|---------------|---------------------------------------------------------|
-| `<SPC> f p`   | Find file in private config                             |
-| `<SPC> h r r` | Reload your config from within Emacs (like `doom sync`) |
-| `<SPC> q r`   | Restart Emacs and restore the current session           |
-| `<SPC> h t`   | Choose a theme                                          |
+| Keybinding           | Description                                             |
+|----------------------|---------------------------------------------------------|
+| <kbd>SPC f p</kbd>   | Find file in private config                             |
+| <kbd>SPC h r r</kbd> | Reload your config from within Emacs (like `doom sync`) |
+| <kbd>SPC q r</kbd>   | Restart Emacs and restore the current session           |
+| <kbd>SPC h t</kbd>   | Choose a theme                                          |
 
 Located in `$DOOMDIR`, Doom's configuration is mainly controlled by three files: `init.el`, `config.el`, `packages.el`.
 To learn more about what each of these files do, I *highly* recommend reading through [this section](https://github.com/doomemacs/doomemacs/blob/develop/docs/getting_started.org#configure) in the doom docs.
@@ -113,19 +113,19 @@ To learn more about what each of these files do, I *highly* recommend reading th
 
 `init.el` contains your `doom!` block, which is how you'll be configuring which packages/modules Doom installs. To get an overview of how to work with it, here's the [relevant section](https://github.com/doomemacs/doomemacs/blob/develop/docs/getting_started.org#modules) in the docs about modules. 
 
-Each module has built-in documentation that you can easily view by typing `K` with your cursor over the module. As of the time of writing, the docs are still a work in progress, but you can still find helpful information about module flags and packages that a module installs. 
+Each module has built-in documentation that you can easily view by typing <kbd>K</kbd> with your cursor over the module. As of the time of writing, the docs are still a work in progress, but you can still find helpful information about module flags and packages that a module installs. 
 
-<img src="/img/module_docs.jpg" alt="module-docs" style="zoom:200%;" />
+![](/img/module_docs.jpg "Module docs for Rust")
 
 When looking into installing additional packages from guides online, you'll first want to check whether there's a relevant module in `init.el` that you can activate instead because modules are pre-configured and are well integrated into Doom.
 
 If you've got some time on your hands, you can window-shop through `init.el` and tweak it to your liking. I'll also be going over my recommendations over in [Turn Emacs into an IDE](#turn-emacs-into-an-ide).
 
-To have your changes take effect, you can run `doom sync` or `<SPC> h r r` from within Emacs. 
+To have your changes take effect, you can run `doom sync` or <kbd>SPC h r r</kbd> from within Emacs. 
 
 ### `config.el`
 
-config.el` is where you configure (shocker!) the packages you install in
+`config.el` is where you configure (shocker!) the packages you install in
 `init.el` and `packages.el`. Emacs is built on Elisp (an Emacs-specific lisp
 variant), so your configuration will also be written in Elisp. However, you can
 get pretty far with just a basic understanding of the language.
@@ -173,7 +173,7 @@ Here's a demo showcasing some basic configuration options:
 
 - [Configure theme](https://github.com/doomemacs/doomemacs/blob/develop/docs/faq.org#how-do-i-change-the-theme)
 
-Use `<SPC> h t` to view/demo themes. Also take a look at [doomemeacs/themes](https://github.com/doomemacs/themes) for screenshots.
+Use <kbd>SPC h t</kbd> to view/demo themes. Also take a look at [doomemeacs/themes](https://github.com/doomemacs/themes) for screenshots.
 
 ```elisp
 (setq doom-theme `doom-old-hope)
@@ -205,7 +205,7 @@ Here's an example with a package that offers excellent high contrast and accessi
    :branch "main")) ;; really pretty themes
 ```
 
-To have your changes take effect, you can run `doom sync` or `<SPC> h r r` from within Emacs. 
+To have your changes take effect, you can run `doom sync` or <kbd>SPC h r r</kbd> from within Emacs. 
 
 ## Turn Emacs into an IDE
 
@@ -218,7 +218,7 @@ Thanks to Doom's great defaults, it mostly just involves toggling some modules i
 To get all the configuration, packages and conveniences you'd expect for a programming language of your choice, simply head over to the `:lang` section of your `init.el` and un-commenting the language you'd like (removing the `;;`).
 After that, make sure to reload your private config to make your changes to take effect.
 Some modules also have additional flags that you can enable for additional functionality specific to that language. 
-You can find out which flags you can enable by typing `K` over a module.
+You can find out which flags you can enable by typing <kbd>K</kbd> over a module.
 
 For instance, I enable `javascript` integration with the following line in my `init.el`:
 
@@ -240,21 +240,25 @@ If you do not have an appropriate language server installed, `lsp-mode` will pro
 
 When first opening a file for which you've enable `lsp` integration, you'll see the following message:
 
-<img src="/img/lsp-mode-first.jpg" alt="lsp-mode-project" style="zoom:200%;" />
 
-The first option to import the project root (`i`) is probably the one you want.
-Although, if the project root doesn't look right, then you might want to set it yourself with `I`.
 
-***Warning***: be careful and avoid setting extremely large directories (like your home dir) as the project root, since `lsp-mode` will then watch every file in the directory, slowing down emacs. 
+![](/img/lsp-mode-first.jpg "Initial LSP-mode view")
 
-Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped together under  `<SPC-c ...>`:
+The first option to import the project root (<kbd>i</kbd>) is probably the one you want.
+Although, if the project root doesn't look right, then you might want to set it yourself with <kbd>I</kbd>.
 
-| Keybinding      | Description                                              |
-|-----------------|----------------------------------------------------------|
-| `gd`            | Go to definition (use `C-o` to return, `C-i` to go back) |
-| `gD`            | Find all references of the item                          |
-| `<SPC> c r`     | Rename an item (context aware)                           |
-| `<SPC> c k`/`K` | View documentation of an item                            |
+{{< alert >}}
+**Warning!** Take care to avoid setting extremely large directories (like your home dir) as the project root. Since `lsp-mode` will then watch every file in the directory, slowing Emacs down. 
+{{< /alert >}}
+
+Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped together under  <kbd>SPC c ...</kbd>:
+
+| Keybinding                      | Description                                                                |
+|---------------------------------|----------------------------------------------------------------------------|
+| <kbd>gd<kbd>                    | Go to definition (use <kbd>C-o</kbd> to return, <kbd>C-i</kbd> to go back) |
+| <kbd>gD<kbd>                    | Find all references of the item                                            |
+| <kbd>SPC c r</kbd>              | Rename an item (context aware)                                             |
+| <kbd>SPC c k</kbd>/<kbd>K</kbd> | View documentation of an item                                              |
 
 
 ### `treesitter`- modern syntax highlighting
@@ -281,10 +285,10 @@ Refer to the [module docs](https://docs.doomemacs.org/latest/modules/term/vterm/
 
 Here are the keybindings you need to know about:
 
-| Keybinding  | Description                                                                                  |
-|-------------|----------------------------------------------------------------------------------------------|
-| `<SPC> o t` | Open a terminal buffer                                                                       |
-| `<SPC> o T` | Open a terminal buffer in your current window (allows having multiple open terminal buffers) |
+| Keybinding         | Description                                                                                  |
+|--------------------|----------------------------------------------------------------------------------------------|
+| <kbd>SPC o t</kbd> | Open a terminal buffer                                                                       |
+| <kbd>SPC o T</kbd> | Open a terminal buffer in your current window <br> (allows having multiple open terminal buffers) |
 
 
 
