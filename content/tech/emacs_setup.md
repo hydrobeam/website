@@ -186,7 +186,7 @@ Use <kbd>SPC h t</kbd> to view/demo themes. Also take a look at [doomemeacs/them
 ```
 
 - `use-package!` is a macro for grouping together related configurations. It helps keep your `config.el` structured as it grows. 
-- `:defer` is a property which delays loading the package until needed (i.e. when you call `treemacs`), which helps improve startup time by not loading packages you might not need.
+- `:defer` is a property which delays loading the package until needed (i.e. when you open a markdown file), which helps improve startup time by not loading packages you might not need.
 
 {{< alert >}}
 **Caution!** When writing your own config, make sure to use either `:after PACKAGE` or `:defer t` in `use-package!` blocks to lazy load your packages.
