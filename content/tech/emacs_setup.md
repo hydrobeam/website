@@ -269,8 +269,8 @@ Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped 
 
 | Keybinding                      | Description                                                                |
 |---------------------------------|----------------------------------------------------------------------------|
-| <kbd>gd<kbd>                    | Go to definition (use <kbd>C-o</kbd> to return, <kbd>C-i</kbd> to go back) |
-| <kbd>gD<kbd>                    | Find all references of the item                                            |
+| <kbd>gd</kbd>                    | Go to definition (use <kbd>C-o</kbd> to return, <kbd>C-i</kbd> to go back) |
+| <kbd>gD</kbd>                    | Find all references of the item                                            |
 | <kbd>SPC c r</kbd>              | Rename an item (context aware)                                             |
 | <kbd>SPC c k</kbd>/<kbd>K</kbd> | View documentation of an item                                              |
 
