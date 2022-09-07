@@ -15,7 +15,7 @@ Looking for a break from the monotony... plus a little bit of Doom?
 Look no further! [Doom Emacs](https://github.com/doomemacs/doomemacs) is a *configuration framework* for Emacs that abstracts away a lot of the complexity that goes into perfecting your setup, making it a much friendlier experience overall.
 Doom is a purposely light layer over Emacs that emphasizes performance and startup time, without sacrificing extensibility.
 It lets you configure Emacs any way you like while providing sane defaults and convenience.
-Through Emacs' amazing packages like `Magit`, `Org` and `lsp-mode`, you can really make the most of your editor!
+Through Emacs' amazing packages like `Magit`, `Org` and language server integration, you can make the most of your editor.
 
 The purpose of this post is to give you an intro to Doom/Emacs and offer an overview of some of its features.
 
@@ -28,7 +28,7 @@ Before getting started, I'd highly recommend getting (at least) somewhat familia
 
 ## Installation
 
-Installing Emacs/Doom is very OS-specific, so I'm just going to defer to the [doomemacs docs](https://github.com/doomemacs/doomemacs#install) here (if you're on Windows just use `WSL`).
+Installing Emacs/Doom is very OS-specific, so I'm just going to defer to the [doomemacs docs](https://github.com/doomemacs/doomemacs#prerequisites) here (if you're on Windows just use `WSL`).
 
 {{< alert "edit" >}}
 A small note about Emacs versions, `emacs28` (the latest Emacs version at the time of writing) introduces the `native compilation` feature, which speeds up the execution of Elisp, Emacs' Lisp variant.
