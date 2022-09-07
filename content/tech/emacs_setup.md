@@ -352,8 +352,22 @@ Here's an overview of the keybinds I use most frequently:
 
 ### Magit - a sane Git interface
 
+Despite the ubiquity of `Git`, it still carries a reputation for being difficult to use and understand. 
+So much so that it's quite compelling to just give up, blow up your repo and start from scratch.
+
+[Magit](https://magit.vc/ "Magit website") changes that.
+
+After getting comfortable with Magit, I've noticed a huge difference in the way I think about organizing commits and my repos. Magit taught me how to make the most of `Git`, not just as a means to an end.
+
+Monologue aside... Magit is great! There's a reason it's known as one of "Emacs Killer Apps". The hype is real.
+
+As expected, just enable the `magit` module in your `init.el` to install the package.
+Unfortunately, it's a little difficult to understand how to use Magit from a table of keybindings, so I'll be deferring to SystemCrafers' excellent Magit introduction video here. It goes through all you need to know to get started with Magit!
+
+{{< youtube  _zfvQkJsYwI >}}
 
 ## General tips
+
 
 ### Managing windows
 
