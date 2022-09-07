@@ -368,8 +368,25 @@ Unfortunately, it's a little difficult to understand how to use Magit from a tab
 
 ## General tips
 
+Here's a collection of information that's neat to know. 
 
 ### Managing windows
+
+If you're particularly adept at multitasking, you might enjoy being able to look at multiple buffers at once.
+If so, here are the keybindings you need to know. Most of these can be repeated by typing <kbd>.</kbd>, so you won't need to retype the entire command for making small modifications.
+
+
+| Keybinding            | Description                                               |
+|-----------------------|-----------------------------------------------------------|
+| <kbd>C-x }</kbd>      | Enlarge window horizontally                               |
+| <kbd>C-x {</kbd>      | Shrink window horizontally                                |
+| <kbd>C-x ^</kbd>      | Enlarge window vertically                                 |
+| <kbd>C-x 2</kbd>      | Split window vertically                                   |
+| <kbd>C-x 3</kbd>      | Split window horizontally                                 |
+| <kbd>C-m C-m</kbd>    | Maximize current buffer                                   |
+| <kbd>C-w [hjkl]</kbd> | Navigate around open windows (just like regular movement) |
+
+![](/img/multi-window.jpg.jpg "Multiple windows in Emacs")
 
 ### Workspaces
 
