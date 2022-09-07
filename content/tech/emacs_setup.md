@@ -390,5 +390,19 @@ If so, here are the keybindings you need to know. Most of these can be repeated 
 
 ### Workspaces
 
-### Emacs daemon + tty: in and out quickly
+Workspaces are a way of keeping different projects distinctly separate.
+For example they enable you to draft notes and churn out some code in the same Emacs instance, with no overlap between buffers/terminals/sidebars at all.
+
+You might notice that when you switch to a new project with <kbd>SPC p p</kbd>, a new workspace is automatically created for you.
+
+Here are the keybinds you need to know (mostly grouped under <kbd>SPC TAB</kbd> ):
+
+| Keybinding             | Description                            |
+|------------------------|----------------------------------------|
+| <kbd>gt</kbd>          | Go to the next workspace               |
+| <kbd>SPC TAB n</kbd>   | Create a new workspace                 |
+| <kbd>SPC TAB N</kbd>   | Create a new named workspace           |
+| <kbd>SPC TAB d</kbd>   | Delete active workspace                |
+| <kbd>SPC TAB r</kbd>   | Rename active workspace                |
+| <kbd>SPC TAB TAB</kbd> | Display active workspaces in echo area |
 
