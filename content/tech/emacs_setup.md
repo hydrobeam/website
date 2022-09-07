@@ -12,15 +12,15 @@ showTableOfContents: true
 Are you tired of using a traditional editor?
 Looking for a break from the monotony... plus a little bit of Doom?
 
-Look no further! [Doom Emacs](https://github.com/doomemacs/doomemacs) is a *configuration framework* for Emacs that abstracts away a lot of the complexity that goes into perfecting your setup, making it a much friendlier experience for beginners.
-Doom is a purposely light layer over Emacs and emphasizes performance and startup time, without sacrificing extensibility.
-It lets you configure Emacs just the way you like, while providing sane defaults and convenience.
-Through Emacs' amazing packages like `Magit`, `Org` and `lsp`, you can really make the most of your editor!
+Look no further! [Doom Emacs](https://github.com/doomemacs/doomemacs) is a *configuration framework* for Emacs that abstracts away a lot of the complexity that goes into perfecting your setup, making it a much friendlier experience overall.
+Doom is a purposely light layer over Emacs that emphasizes performance and startup time, without sacrificing extensibility.
+It lets you configure Emacs any way you like while providing sane defaults and convenience.
+Through Emacs' amazing packages like `Magit`, `Org` and `lsp-mode`, you can really make the most of your editor!
 
-The purpose of this post is to give you an intro to Doom/Emacs and offer an overview of some of its features!
+The purpose of this post is to give you an intro to Doom/Emacs and offer an overview of some of its features.
 
 I'll be covering:
-- What a typical workflow might look like + how to use Emacs.
+- What a typical workflow might look like.
 - How to configure Doom using its built-in module system.
 - My recommendations for packages, config tweaks + how I like to use Emacs.
 
@@ -28,13 +28,16 @@ Before getting started, I'd highly recommend getting (at least) somewhat familia
 
 ## Installation
 
-Installing Emacs/Doom is very OS specific, so I'm just going to defer to the [doomemacs docs](https://github.com/doomemacs/doomemacs#install) here (if you're on Windows just use `WSL`).
+Installing Emacs/Doom is very OS-specific, so I'm just going to defer to the [doomemacs docs](https://github.com/doomemacs/doomemacs#install) here (if you're on Windows just use `WSL`).
 
-> A small note about Emacs versions, `emacs28` (the latest Emacs version at the time of writing) introduces the `native compilation` feature, which speeds up the execution of Elisp, Emacs' lisp variant. So it's an all around Good Thing™️.
+{{< alert "edit" >}}
+A small note about Emacs versions, `emacs28` (the latest Emacs version at the time of writing) introduces the `native compilation` feature, which speeds up the execution of Elisp, Emacs' Lisp variant.
+So it's an all-around Good Thing™️.
+{{< /alert >}}
 
-When everything is set up, run Emacs and you should be greeted to a splash screen like this:
+When everything is set up, run Emacs and you should be greeted by a splash screen like this:
 
-![](/img/doom_startup.jpg "Initial Doom Emacs View")
+![initial Doom view](/img/doom_startup.jpg "Initial Doom Emacs View")
 
 ## First Moments
 
@@ -52,9 +55,10 @@ So, run <kbd>SPC .</kbd> and open a file of your choice.
 If you open another file and would like to navigate back, you can switch the buffer that you're looking at with <kbd>SPC ,</kbd>.
 If you feel that your buffer list is too crowded, or that you're fully done with working on the current file, use  <kbd>SPC b k</kbd>  to kill the buffer and remove it from the list.
 
-### Projects/Workspaces
+### Projects
 
-I typically structure my business into specific directories, so it'd be helpful if Emacs let me work on projects like a typical editor. Well... it's Emacs, so of course you can. Here are some helpful project-related keybindings.
+I typically structure my business into specific directories, so it'd be helpful if Emacs let you work on projects like a typical editor.
+Well... it's Emacs, so of course you can! Here are some helpful project-related keybindings.
 
 
 | Keybinding         | Description                                                                 |
@@ -66,16 +70,16 @@ I typically structure my business into specific directories, so it'd be helpful 
 
 {{< alert  >}}
 **Warning!** For `projectile` to recognize a "project", it must contain a [special file](https://docs.projectile.mx/projectile/index.html#features) like a `.git` or `.projectile`. If it does not contain one, then it will silently remove your directory from the list.
-
 {{< /alert >}}
 
 ### Getting help + Discovery
 
 You might've heard that Emacs is self-documenting, but how do we actually take advantage of that?
 
-Well, there are handy commands for learning more about the functions we're using in addition to discovering new ones. Type <kbd>SPC h</kbd> and wait for a moment to view the possible commands you can run for getting help.
+Well, there are handy commands for learning more about the functions we're using on top of discovering new ones.
+Type <kbd>SPC h</kbd> and wait for a moment to view the available help commands and their corresponding keybinds.
 
-![](/img/which_key.jpg "Show possible keybindings with `which-key`")
+![](/img/which_key.jpg "See possible keybindings with `which-key`")
 
 Most of these are a little too involved for now, but I'll be covering the hits (You can also access these via <kbd>C-h</kbd>).
 
@@ -89,13 +93,13 @@ Most of these are a little too involved for now, but I'll be covering the hits (
 
 
 <kbd>M-x</kbd> (<kbd>Alt x</kbd>) is a very commonly used keybinding.
-It lists every command you have access to. You typically won't be using many of the commands in this list,
-but it's useful for learning more about what a package can do.
-For example, try searching for `projectile` to get an idea of the commands you have access to (sometimes without keybindings), such as `projectile-replace` for `find and replace` functionality.
+It lists and allows you to run every command you have access to.
+You typically won't be using many of the commands in this list, but it's useful for learning more about what a package can do.
+For example, try searching for `projectile` to get an idea of the commands you have access to (sometimes without keybindings), such as `projectile-replace` for *find and replace* functionality.
 
-For describing/ learning more about commands (examples, docs etc...), try <kbd>SPC h k</kbd> and typing <kbd>SPC .</kbd> to learn more about the `find-file` function.
+For describing / learning more about commands (examples, docs etc...), try <kbd>SPC h k</kbd> and typing <kbd>SPC .</kbd> to learn more about the `find-file` function.
 Next, try looking at a description for the `doom-font` variable with <kbd>SPC h v</kbd>. 
-Here you'll see documentation about how `Doom` configures its font. Which makes for a good segue about learning about how to configure Doom.
+Here you'll see documentation about how `Doom` configures its font. Which makes for a good segue about learning how to configure Doom!
 
 ## Understanding Your Config
 
@@ -106,12 +110,12 @@ Here you'll see documentation about how `Doom` configures its font. Which makes 
 | <kbd>SPC q r</kbd>   | Restart Emacs and restore the current session           |
 | <kbd>SPC h t</kbd>   | Choose a theme                                          |
 
-Located in `$DOOMDIR`, Doom's configuration is mainly controlled by three files: `init.el`, `config.el`, `packages.el`.
-To learn more about what each of these files do, I *highly* recommend reading through [this section](https://github.com/doomemacs/doomemacs/blob/develop/docs/getting_started.org#configure) in the doom docs.
+Located in `$DOOMDIR`, Doom's configuration is mainly controlled by three files: `init.el`, `config.el` and `packages.el`.
+To learn more about what each of these files do, I *highly* recommend reading through [this section](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#configure) in the Doom docs.
 
 ### `init.el`
 
-`init.el` contains your `doom!` block, which is how you'll be configuring which packages/modules Doom installs. To get an overview of how to work with it, here's the [relevant section](https://github.com/doomemacs/doomemacs/blob/develop/docs/getting_started.org#modules) in the docs about modules. 
+`init.el` contains your `doom!` block, which is how you'll be configuring which packages/modules Doom installs. To get an overview of how to work with it, here's the [relevant section](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#modules) in the docs about modules. 
 
 Each module has built-in documentation that you can easily view by typing <kbd>K</kbd> with your cursor over the module. As of the time of writing, the docs are still a work in progress, but you can still find helpful information about module flags and packages that a module installs. 
 
@@ -119,21 +123,20 @@ Each module has built-in documentation that you can easily view by typing <kbd>K
 
 When looking into installing additional packages from guides online, you'll first want to check whether there's a relevant module in `init.el` that you can activate instead because modules are pre-configured and are well integrated into Doom.
 
-If you've got some time on your hands, you can window-shop through `init.el` and tweak it to your liking. I'll also be going over my recommendations over in [Turn Emacs into an IDE](#turn-emacs-into-an-ide).
+If you've got some time on your hands, you can window-shop through `init.el` and tweak it to your liking. I'll also be going over my recommendations in [Turn Emacs into an IDE](#turn-emacs-into-an-ide).
 
 To have your changes take effect, you can run `doom sync` or <kbd>SPC h r r</kbd> from within Emacs. 
 
 ### `config.el`
 
-`config.el` is where you configure (shocker!) the packages you install in
-`init.el` and `packages.el`. Emacs is built on Elisp (an Emacs-specific lisp
-variant), so your configuration will also be written in Elisp. However, you can
-get pretty far with just a basic understanding of the language.
+`config.el` is where you configure (shocker!) the packages you install in `init.el` and `packages.el`.
+Emacs is built on Elisp (an Emacs-specific Lisp variant), so your configuration will also be written in Elisp.
 
+If you're not comfortable with Lisp, don't worry!
+You can get pretty far with just a basic understanding of the language.
 Here's a rudimentary rundown:
 
 #### Basic Elisp
-
 
 ```elisp
 ;; (setq key val)
@@ -159,17 +162,18 @@ Here's a rudimentary rundown:
 (message "hello")
 ```
 
-You can get a **LOT** deeper into `Elisp`, but this is good enough for now. Here's a demo showcasing some basic configuration options:
+You can get a **LOT** deeper into Elisp, but this is good enough for now.
+Here's a demo showcasing some basic configuration options:
 
-- [Configure font](https://github.com/doomemacs/doomemacs/blob/develop/docs/faq.org#how-do-i-change-the-fonts)
+- [Configure font](https://github.com/doomemacs/doomemacs/blob/master/docs/faq.org#how-do-i-change-the-fonts)
 
 ```elisp
 (setq doom-font (font-spec :family "Jetbrains Mono" :size 13.5))
 ```
 
-- [Configure theme](https://github.com/doomemacs/doomemacs/blob/develop/docs/faq.org#how-do-i-change-the-theme)
+- [Configure theme](https://github.com/doomemacs/doomemacs/blob/master/docs/faq.org#how-do-i-change-the-theme)
 
-Use <kbd>SPC h t</kbd> to view/demo themes. Also take a look at [doomemeacs/themes](https://github.com/doomemacs/themes) for screenshots.
+Use <kbd>SPC h t</kbd> to view/demo themes. Also, take a look at [doomemeacs/themes](https://github.com/doomemacs/themes) for screenshots.
 
 ```elisp
 (setq doom-theme `doom-old-hope)
@@ -189,12 +193,12 @@ Use <kbd>SPC h t</kbd> to view/demo themes. Also take a look at [doomemeacs/them
 - `:defer` is a property which delays loading the package until needed (i.e. when you open a markdown file), which helps improve startup time by not loading packages you might not need.
 
 {{< alert >}}
-**Caution!** When writing your own config, make sure to use either `:after PACKAGE` or `:defer t` in `use-package!` blocks to lazy load your packages.
+**Caution!** When writing your own config, make sure to always use either `:after PACKAGE` or `:defer t` in `use-package!` blocks to lazy load your packages.
 {{< /alert >}}
 
 ### `packages.el`
 
-This is where you install packages that aren't built into Doom's modules. Before installing anything, give [the relevant section](https://github.com/doomemacs/doomemacs/blob/develop/docs/getting_started.org#package-management) in the docs a read, it contains warnings + good advice.
+This is where you install packages that aren't built into Doom's modules. Before installing anything, give [the relevant section](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#package-management) in the docs a read, it contains warnings + good advice.
 
 
 #### Quick packages overview
@@ -207,7 +211,7 @@ In short:
 (package! your-package)
 ```
 
-- If not, you can specify from where to install the package.
+- If not, you can specify where to install the package.
 
 Here's an example with a package that offers excellent high contrast and accessible themes: prot's [`ef-themes`](https://protesilaos.com/emacs/ef-themes).
 
@@ -223,13 +227,13 @@ To have your changes take effect, you can run `doom sync` or <kbd>SPC h r r</kbd
 ## Turn Emacs into an IDE
 
 If you're coming over from another editor or IDE, you might be wondering how to make Emacs do all the fancy things your previous editor could do, or if it's even possible.
-Fortunately, it is very much possible and also very easy to get up and running.
+Fortunately, it is not only possible but also quite painless to get up and running.
 Thanks to Doom's great defaults, all you have to do is toggle some modules in your `init.el` and carry on like usual. 
 
 ### Working with languages
 
 To get all the configuration, packages and conveniences you'd expect for a programming language of your choice, simply head over to the `:lang` section of your `init.el` and un-comment the language of your choice.
-After that, make sure to reload your private config to make your changes to take effect.
+After that, make sure to reload your private config to make your changes take effect.
 Some modules also have additional flags that you can enable for additional language-specific features. 
 
 For instance, I enable `javascript` integration with the following line in my `init.el`
@@ -262,7 +266,7 @@ The first option to import the project root (<kbd>i</kbd>) is probably the one y
 Although, if the project root doesn't look right, then you might want to set it yourself with <kbd>I</kbd>.
 
 {{< alert >}}
-**Warning!** Take care to avoid setting extremely large directories (like your home dir) as the project root. Since `lsp-mode` will then watch every file in the directory, slowing Emacs down. 
+**Warning!** Avoid setting extremely large directories (like your home dir) as the project root. Since `lsp-mode` will then watch every file in the directory, slowing Emacs down. 
 {{< /alert >}}
 
 Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped together under  <kbd>SPC c ...</kbd>:
@@ -277,7 +281,7 @@ Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped 
 
 ### Tree-sitter - modern syntax highlighting
 
-The built in Emacs syntax highlighting for some languages can be lacking at times.
+The built-in Emacs syntax highlighting for some languages can be lacking at times.
 Fortunately, thanks to Tree-sitter there's a way to improve it! 
 
 I'll defer to the [`emacs-tree-sitter`](https://emacs-tree-sitter.github.io/) package for an explanation.
@@ -289,7 +293,7 @@ To enable Tree-sitter support for a supported language, just add the `+tree-sitt
 
 ### `vterm`- a sweet terminal
 
-Every good editor needs an even better terminal. Emacs has a few solutions for built in terminals, but `vterm` is the clear winner.
+Every good editor needs an even better terminal. Emacs has a few solutions for built-in terminals, but `vterm` is the clear winner.
 Since it's based on `libvterm` (an external C library), it's fast, light and offers "near universal compatibility with terminal applications" (according to the [project repository](https://github.com/akermu/emacs-libvterm)).
 
 To enable it, activate the `vterm` module in your `init.el`.
@@ -373,7 +377,7 @@ Here's a collection of information that's neat to know.
 ### Managing windows
 
 If you're particularly adept at multitasking, you might enjoy being able to look at multiple buffers at once.
-If so, here are the keybindings you need to know. Most of these can be repeated by typing <kbd>.</kbd>, so you won't need to retype the entire command for making small modifications.
+If so, here are the keybindings you need to know. Most of these can be repeated by typing <kbd>.</kbd>, so you won't need to retype the entire command when making small modifications.
 
 
 | Keybinding            | Description                                               |
@@ -391,9 +395,8 @@ If so, here are the keybindings you need to know. Most of these can be repeated 
 ### Workspaces
 
 Workspaces are a way of keeping different projects distinctly separate.
-For example they enable you to draft notes and churn out some code in the same Emacs instance, with no overlap between buffers/terminals/sidebars at all.
-
-You might notice that when you switch to a new project with <kbd>SPC p p</kbd>, a new workspace is automatically created for you.
+For example, they enable you to draft notes and churn out some code in the same Emacs instance, with no overlap between buffers/terminals/sidebars at all.
+You might also notice that when you switch to a new project with <kbd>SPC p p</kbd>, a new workspace is automatically created for you.
 
 Here are the keybinds you need to know (mostly grouped under <kbd>SPC TAB</kbd> ):
 
