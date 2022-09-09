@@ -86,12 +86,13 @@ Type <kbd>SPC h</kbd> and wait for a moment to view the available help commands 
 Most of these are a little too involved for now, but I'll be covering the hits (You can also access these via <kbd>C-h</kbd>).
 
 
-| Keybinding         | Description                                      |
-|--------------------|--------------------------------------------------|
-| <kbd>M-x ...</kbd> | Search for and run any interactive function      |
-| <kbd>SPC h k</kbd> | Describes a command associated with a keybinding |
-| <kbd>SPC h f</kbd> | Describes a function                             |
-| <kbd>SPC h v</kbd> | Describes a variable                             |
+| Keybinding           | Description                                      |
+|----------------------|--------------------------------------------------|
+| <kbd>M-x ...</kbd>   | Search for and run any interactive function      |
+| <kbd>SPC h b b</kbd> | Explore all available key bindings               |
+| <kbd>SPC h k</kbd>   | Describes a command associated with a keybinding |
+| <kbd>SPC h f</kbd>   | Describes a function                             |
+| <kbd>SPC h v</kbd>   | Describes a variable                             |
 
 
 <kbd>M-x</kbd> (<kbd>Alt x</kbd>) is a very commonly used keybinding.
@@ -99,9 +100,12 @@ It lists and allows you to run every command you have access to.
 You typically won't be using many of the commands in this list, but it's useful for learning more about what a package can do.
 For example, try searching for `projectile` to get an idea of the commands you have access to (sometimes without keybindings), such as `projectile-replace` for *find and replace* functionality.
 
+In the same spirit as <kbd>M-x</kbd>, <kbd>SPC h b b</kbd> lets you explore the keybindings you have access to.
+You can try searching for either a specific keybind or package name.
+
 For describing / learning more about commands (examples, docs etc...), try <kbd>SPC h k</kbd> and typing <kbd>SPC .</kbd> to learn more about the `find-file` function.
 Next, try looking at a description for the `doom-font` variable with <kbd>SPC h v</kbd>. 
-Here you'll see documentation about how `Doom` configures its font. Which makes for a good segue about learning how to configure Doom!
+Here you'll see documentation about how Doom configures your font. Which makes for a good segue about learning how to configure Doom!
 
 ## Understanding Your Config
 
@@ -117,18 +121,20 @@ To learn more about what each of these files do, I *highly* recommend reading th
 
 ### `init.el`
 
-`init.el` contains your `doom!` block, which is how you'll be configuring which packages/modules Doom installs. To get an overview of how to work with it, here's the [relevant section](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#modules) in the docs about modules. 
+`init.el` contains your `doom!` block, which is how you'll be configuring which packages/modules Doom installs.
+To understand how it works, read through the [module section](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#modules) in the docs. 
 
-Each module has built-in documentation that you can easily view by typing <kbd>K</kbd> with your cursor over the module. As of the time of writing, the docs are still a work in progress, but you can still find helpful information about module flags and packages that a module installs. 
+Each module has built-in documentation that you can easily view by typing <kbd>K</kbd> with your cursor over the module.
+As of the time of writing, the docs are still a work in progress, but you can still find helpful information about module flags and packages that a module installs. 
 
 ![](/img/module_docs.jpg "Module docs for Rust")
 
-When looking into installing additional packages from guides online, you'll first want to check whether there's a relevant module in `init.el` that you can activate instead because modules are pre-configured and are well integrated into Doom.
+If you're looking into installing additional packages from online guides, you'll first want to check whether there's a relevant module in `init.el` that you can activate instead because modules are pre-configured and are well integrated into Doom.
 
-If you've got some time on your hands, you can window-shop through `init.el` and tweak it to your liking.
-I'll also be going over my recommendations in [Turn Emacs into an IDE](#turn-emacs-into-an-ide).
+If you've got time on your hands, you can window-shop through `init.el` and tweak it to your liking.
+I'll also be going over the highlights in [Turn Emacs into an IDE](#turn-emacs-into-an-ide).
 
-To have your changes take effect, you can run `doom sync` or <kbd>SPC h r r</kbd> from within Emacs. 
+To have your changes take effect after modifying your `init.el`, you can run `doom sync` in your terminal or <kbd>SPC h r r</kbd> from within Emacs. 
 
 ### `config.el`
 
@@ -176,11 +182,13 @@ Here's a demo showcasing some basic configuration options:
 
 - [Configure theme](https://github.com/doomemacs/doomemacs/blob/master/docs/faq.org#how-do-i-change-the-theme)
 
-Use <kbd>SPC h t</kbd> to view/demo themes. Also, take a look at [doomemeacs/themes](https://github.com/doomemacs/themes) for screenshots.
-
 ```elisp
 (setq doom-theme `doom-old-hope)
 ```
+
+Use <kbd>SPC h t</kbd> to try out available themes.
+Also, take a look at [doomemeacs/themes](https://github.com/doomemacs/themes) for screenshots.
+
 
 #### More advanced configuration
 
@@ -201,7 +209,7 @@ Use <kbd>SPC h t</kbd> to view/demo themes. Also, take a look at [doomemeacs/the
 
 ### `packages.el`
 
-This is where you install packages that aren't built into Doom's modules. Before installing anything, give [the relevant section](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#package-management) in the docs a read, it contains warnings + good advice.
+This is where you install packages that aren't built into Doom's modules. Before installing anything, give [this section](https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org#package-management) in the docs a read, it contains warnings + good advice.
 
 
 #### Quick packages overview
@@ -231,11 +239,11 @@ To have your changes take effect, you can run `doom sync` or <kbd>SPC h r r</kbd
 
 If you're coming over from another editor or IDE, you might be wondering how to make Emacs do all the fancy things your previous editor could do, or if it's even possible.
 Fortunately, it is not only possible but also quite painless to get up and running.
-Thanks to Doom's great defaults, all you have to do is toggle some modules in your `init.el` and carry on like usual. 
+Thanks to Doom's great defaults, all you have to do is toggle some modules in your `init.el` and carry on like usual!
 
 ### Working with languages
 
-To get all the configuration, packages and conveniences you'd expect for a programming language of your choice, simply head over to the `:lang` section of your `init.el` and un-comment the language of your choice.
+To get all the configuration, packages and conveniences you'd expect for a programming language of your choice, simply head over to the `:lang` section of your `init.el` and un-comment the language.
 After that, make sure to reload your private config to make your changes take effect.
 Some modules also have additional flags that you can enable for additional language-specific features. 
 
@@ -258,7 +266,7 @@ You can find out which flags are available by typing <kbd>K</kbd> over a module.
 The `lsp` module integrates [language servers](https://langserver.org/) into Emacs, providing features like jump-to-definition, code completion, real-time linting and more!
 To get started, enable the `lsp` module under `:tools` which will configure and install [`lsp-mode`](https://emacs-lsp.github.io/lsp-mode/). 
 
-Then, for each language where you'd like to take advantage of `lsp` integration, just add the `+lsp` flag in your `init.el`.
+Then, for each language where you'd like to take advantage of `lsp` integration, just add the `+lsp` flag to its module.
 If you do not have an appropriate language server installed, `lsp-mode` will prompt you to install it on your behalf. 
 
 When first opening a file that supports `lsp`, you'll see the following message:
@@ -272,7 +280,7 @@ Although, if the project root doesn't look right, then you might want to set it 
 **Warning!** Avoid setting extremely large directories (like your home dir) as the project root. Since `lsp-mode` will then watch every file in the directory, slowing Emacs down. 
 {{< /alert >}}
 
-Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped together under  <kbd>SPC c ...</kbd>:
+Here are some neat things you can do in `lsp-mode` (LSP keybindings are grouped together under  <kbd>SPC c ...</kbd>):
 
 | Keybinding                      | Description                                                                |
 |---------------------------------|----------------------------------------------------------------------------|
@@ -285,14 +293,14 @@ Here are some neat things you can do in `lsp-mode`. LSP keybindings are grouped 
 ### Tree-sitter - modern syntax highlighting
 
 The built-in Emacs syntax highlighting for some languages can be lacking at times.
-Fortunately, thanks to Tree-sitter there's a way to improve it! 
+Fortunately, thanks to Tree-sitter there's a way to improve it.
 
 I'll defer to the [`emacs-tree-sitter`](https://emacs-tree-sitter.github.io/) package for an explanation.
 Essentially, Tree-sitter introduces more performant and robust syntax highlighting which gives you more control over the buffer.
 Not all languages currently have support for tree-sitter parsing (refer to the module docs for more info).
+When it's available, you'll definitely want to use it.
 
-To enable Tree-sitter support for a supported language, just add the `+tree-sitter` flag to the module.
-
+To enable Tree-sitter support for a language, just add the `+tree-sitter` flag to the module.
 
 ### `vterm`- a sweet terminal
 
@@ -305,15 +313,15 @@ Refer to the [module docs](https://docs.doomemacs.org/latest/modules/term/vterm/
 
 Here are the keybindings you need to know about:
 
-| Keybinding         | Description                                                                                  |
-|--------------------|----------------------------------------------------------------------------------------------|
-| <kbd>SPC o t</kbd> | Open a terminal buffer                                                                       |
+| Keybinding         | Description                                                                                       |
+|--------------------|---------------------------------------------------------------------------------------------------|
+| <kbd>SPC o t</kbd> | Open a terminal buffer                                                                            |
 | <kbd>SPC o T</kbd> | Open a terminal buffer in your current window <br> (allows having multiple open terminal buffers) |
 
 ### Treemacs - view your files in the sidebar
 
 Having a project drawer is a very convenient tool for managing files and understanding your project's directory structure.
-Thankfully Doom provides the `treemacs` module which does just that!
+Thankfully Doom provides the `treemacs` module which does just that.
 Simply enable `treemacs` in your `init.el` (also consider the `+lsp` flag for some additional `lsp-mode` integration)
 
 <!-- have to do it like this because the image is too wide, and the figure shortcode won't accept width as a parameter -->
@@ -328,14 +336,12 @@ Simply enable `treemacs` in your `init.el` (also consider the `+lsp` flag for so
   <figcaption>Treemacs Sidebar</figcaption>
 </figure>
 
-I also have some additional configuration in my `config.el` to improve its appearance and functionality.
+I also have some additional configuration in my `config.el` to improve its appearance.
 
 ```elisp
 (use-package! treemacs
   :defer t
   :config
-  ;; allows you to C-w C-w to treemacs
-  (setq treemacs-is-never-other-window nil)
   ;; alters file icons to be more vscode-esque (better 😼)
   ;; https://github.com/doomemacs/themes/wiki/Extension:-Treemacs
   (setq doom-themes-treemacs-theme "doom-colors")
@@ -360,13 +366,13 @@ Here's an overview of the keybinds I use most frequently:
 ### Magit - a sane Git interface
 
 Despite the ubiquity of `Git`, it still carries a reputation for being difficult to use and understand. 
-So much so that it's quite compelling to just give up, blow up your repo and start from scratch.
+So much so that if something ever goes wrong, it's quite compelling to just give up, blow up your repo and start from scratch.
 
 [Magit](https://magit.vc/ "Magit website") changes that.
 
 After getting comfortable with Magit, I've noticed a huge difference in the way I think about organizing commits and my repos. Magit taught me how to make the most of `Git`, not just as a means to an end.
 
-Monologue aside... Magit is great! There's a reason it's known as one of "Emacs Killer Apps". The hype is real.
+Flanerie aside... Magit is great! There's a reason it's known as one of "Emacs Killer Apps". The hype is real.
 
 As expected, just enable the `magit` module in your `init.el` to install the package.
 Unfortunately, it's a little difficult to understand how to use Magit from a table of keybindings, so I'll be deferring to SystemCrafers' excellent Magit introduction video here. It goes through all you need to know to get started with Magit!
@@ -388,10 +394,12 @@ If so, here are the keybindings you need to know. Most of these can be repeated 
 | <kbd>C-x }</kbd>      | Enlarge window horizontally                               |
 | <kbd>C-x {</kbd>      | Shrink window horizontally                                |
 | <kbd>C-x ^</kbd>      | Enlarge window vertically                                 |
-| <kbd>C-x 2</kbd>      | Split window vertically                                   |
-| <kbd>C-x 3</kbd>      | Split window horizontally                                 |
-| <kbd>C-m C-m</kbd>    | Maximize current buffer                                   |
+| <kbd>C-w v</kbd>      | Split window vertically                                   |
+| <kbd>C-w s</kbd>      | Split window horizontally                                 |
+| <kbd>C-w m m</kbd>    | Maximize current buffer                                   |
 | <kbd>C-w [hjkl]</kbd> | Navigate around open windows (just like regular movement) |
+
+There are doom keybindings for these commands under <kbd>SPC w ...</kbd>, but I personally find the defaults more ergonomic.
 
 ![](/img/multi-window.jpg.jpg "Multiple windows in Emacs")
 
