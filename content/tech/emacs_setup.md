@@ -14,7 +14,7 @@ Looking for a break from the monotony... plus a little bit of Doom?
 
 Look no further! [Doom Emacs](https://github.com/doomemacs/doomemacs) is a *configuration framework* for Emacs that abstracts away a lot of the complexity that goes into perfecting your setup, making it a much friendlier experience overall.
 Doom is a purposely light layer over Emacs that emphasizes performance and startup time, without sacrificing extensibility.
-It also provides (optional) vim emulation powered by [`evil-mode`](https://github.com/emacs-evil/evil) out of the box, so if you're comfortable with vim keybindings you'll feel right at home.
+It also provides (optional) vim emulation powered by [`evil-mode`](https://github.com/emacs-evil/evil) out of the box, so if you're comfortable with vim keybindings, you'll feel right at home.
 With Emacs' vast selection of amazing packages and excellent language server integration, you can make the most of your editor!
 
 ----
