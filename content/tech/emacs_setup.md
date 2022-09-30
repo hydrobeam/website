@@ -104,8 +104,9 @@ In the same spirit as <kbd>M-x</kbd>, <kbd>SPC h b b</kbd> lets you explore the 
 You can try searching for either a specific keybind or package name.
 
 For describing / learning more about commands (examples, docs etc...), try <kbd>SPC h k</kbd> and typing <kbd>SPC .</kbd> to learn more about the `find-file` function.
-Next, try looking at a description for the `doom-font` variable with <kbd>SPC h v</kbd>. 
-Here you'll see documentation about how Doom configures your font. Which makes for a good segue about learning how to configure Doom!
+
+Next, try looking at the description for the `doom-font` variable with <kbd>SPC h v</kbd>. 
+Here you'll see documentation and examples about how Doom configures your font. Which makes for a good segue about learning how to configure Doom Emacs!
 
 ## Understanding Your Config
 
@@ -150,12 +151,12 @@ Here's a rudimentary rundown:
 ```elisp
 ;; (setq key val)
 
-;; Basic vales
+;; Basic values
 (setq my-var 10)          ;; number
 (setq my-name "Aquabeam") ;; string
 (setq my-name 'Aquabeam)  ;; symbol
 
-;;; multiple items in one setq
+;; Multiple items in one setq
 (setq item1 10
       item2 20
       item3 30)
@@ -201,7 +202,7 @@ Also, take a look at [doomemeacs/themes](https://github.com/doomemacs/themes) fo
 ```
 
 - `use-package!` is a macro for grouping together related configurations. It helps keep your `config.el` structured as it grows. 
-- `:defer` is a property which delays loading the package until needed (i.e. when you open a markdown file), which helps improve startup time by not loading packages you might not need.
+- `:defer` is a property which delays loading the package until needed (i.e. when you open a markdown file), which helps improve startup time by not loading packages you might not use.
 
 {{< alert >}}
 **Caution!** When writing your own config, make sure to always use either `:after PACKAGE` or `:defer t` in `use-package!` blocks to lazy load your packages.
@@ -258,7 +259,7 @@ I'll be covering them in the following sections.
 
 
 {{< alert "edit" >}}
-You can find out which flags are available by typing <kbd>K</kbd> over a module.
+You can find out which flags are available by typing <kbd>K</kbd> with your cursor over a module.
 {{< /alert >}}
 
 ### `lsp` - VSCode-esque intellisense 
@@ -285,9 +286,9 @@ Here are some neat things you can do in `lsp-mode` (LSP keybindings are grouped 
 | Keybinding                      | Description                                                                |
 |---------------------------------|----------------------------------------------------------------------------|
 | <kbd>gd</kbd>                   | Go to definition (use <kbd>C-o</kbd> to return, <kbd>C-i</kbd> to go back) |
-| <kbd>gD</kbd>                   | Find all references of the item                                            |
-| <kbd>SPC c r</kbd>              | Rename an item (context aware)                                             |
-| <kbd>SPC c k</kbd>/<kbd>K</kbd> | View documentation of an item                                              |
+| <kbd>gD</kbd>                   | Find all references of an item under your cursor                           |
+| <kbd>SPC c r</kbd>              | Rename an item (context aware) under your cursor                           |
+| <kbd>SPC c k</kbd>/<kbd>K</kbd> | View documentation of an item under your cursor                            |
 
 
 ### Tree-sitter - modern syntax highlighting
@@ -298,7 +299,7 @@ Fortunately, thanks to Tree-sitter there's a way to improve it.
 I'll defer to the [`emacs-tree-sitter`](https://emacs-tree-sitter.github.io/) package for an explanation.
 Essentially, Tree-sitter introduces more performant and robust syntax highlighting which gives you more control over the buffer.
 Not all languages currently have support for tree-sitter parsing (refer to the module docs for more info).
-When it's available, you'll definitely want to use it.
+However, you'll definitely want to use it when available.
 
 To enable Tree-sitter support for a language, just add the `+tree-sitter` flag to the module.
 
@@ -399,7 +400,7 @@ If so, here are the keybindings you need to know. Most of these can be repeated 
 | <kbd>C-w m m</kbd>    | Maximize current buffer                                   |
 | <kbd>C-w [hjkl]</kbd> | Navigate around open windows (just like regular movement) |
 
-There are doom keybindings for these commands under <kbd>SPC w ...</kbd>, but I personally find the defaults more ergonomic.
+There are doom keybindings for these commands under the <kbd>SPC w</kbd> prefix, but I personally find the evil-mode defaults more ergonomic.
 
 ![](/img/multi-window.jpg.jpg "Multiple windows in Emacs")
 
